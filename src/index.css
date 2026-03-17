@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=IBM+Plex+Mono:wght@400;500;600&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -6,84 +6,52 @@
 
 @layer base {
   :root {
-    --background: 230 20% 98%;
-    --foreground: 230 25% 12%;
+    /* Dark theme as default — matching Iron Vault Digital */
+    --background: 0 0% 5%;
+    --foreground: 40 10% 92%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 230 25% 12%;
+    --card: 0 0% 8%;
+    --card-foreground: 40 10% 92%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 230 25% 12%;
+    --popover: 0 0% 8%;
+    --popover-foreground: 40 10% 92%;
 
-    --primary: 230 70% 50%;
-    --primary-foreground: 0 0% 100%;
+    /* Gold accent */
+    --primary: 42 55% 55%;
+    --primary-foreground: 0 0% 5%;
 
-    --secondary: 230 15% 94%;
-    --secondary-foreground: 230 25% 12%;
+    --secondary: 0 0% 12%;
+    --secondary-foreground: 40 10% 85%;
 
-    --muted: 230 15% 94%;
-    --muted-foreground: 230 10% 46%;
+    --muted: 0 0% 14%;
+    --muted-foreground: 40 5% 55%;
 
-    --accent: 230 15% 94%;
-    --accent-foreground: 230 25% 12%;
+    --accent: 42 55% 55%;
+    --accent-foreground: 0 0% 5%;
 
-    --destructive: 0 84% 60%;
+    --destructive: 0 70% 50%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 230 15% 90%;
-    --input: 230 15% 90%;
-    --ring: 230 70% 50%;
+    --border: 0 0% 16%;
+    --input: 0 0% 16%;
+    --ring: 42 55% 55%;
 
     --radius: 0.75rem;
 
     --success: 150 60% 40%;
     --success-foreground: 0 0% 100%;
 
-    --surface-elevated: 0 0% 100%;
-    --surface-sunken: 230 20% 96%;
+    --surface-elevated: 0 0% 9%;
+    --surface-sunken: 0 0% 3%;
 
-    --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
-    --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.07), 0 2px 4px -2px rgb(0 0 0 / 0.05);
-    --shadow-lg: 0 10px 25px -5px rgb(0 0 0 / 0.08), 0 8px 10px -6px rgb(0 0 0 / 0.04);
-
-    --sidebar-background: 0 0% 98%;
-    --sidebar-foreground: 240 5.3% 26.1%;
-    --sidebar-primary: 240 5.9% 10%;
-    --sidebar-primary-foreground: 0 0% 98%;
-    --sidebar-accent: 240 4.8% 95.9%;
-    --sidebar-accent-foreground: 240 5.9% 10%;
-    --sidebar-border: 220 13% 91%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
-  }
-
-  .dark {
-    --background: 230 25% 6%;
-    --foreground: 230 15% 92%;
-    --card: 230 25% 9%;
-    --card-foreground: 230 15% 92%;
-    --popover: 230 25% 9%;
-    --popover-foreground: 230 15% 92%;
-    --primary: 230 70% 60%;
-    --primary-foreground: 0 0% 100%;
-    --secondary: 230 20% 15%;
-    --secondary-foreground: 230 15% 92%;
-    --muted: 230 20% 15%;
-    --muted-foreground: 230 10% 55%;
-    --accent: 230 20% 15%;
-    --accent-foreground: 230 15% 92%;
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-    --border: 230 20% 18%;
-    --input: 230 20% 18%;
-    --ring: 230 70% 60%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-background: 0 0% 7%;
+    --sidebar-foreground: 40 10% 85%;
+    --sidebar-primary: 42 55% 55%;
+    --sidebar-primary-foreground: 0 0% 5%;
+    --sidebar-accent: 0 0% 12%;
+    --sidebar-accent-foreground: 40 10% 85%;
+    --sidebar-border: 0 0% 16%;
+    --sidebar-ring: 42 55% 55%;
   }
 }
 
@@ -109,7 +77,7 @@
 
 @layer components {
   .label-uppercase {
-    @apply text-[10px] uppercase tracking-[0.12em] font-semibold text-muted-foreground;
+    @apply text-[10px] uppercase tracking-[0.15em] font-semibold text-muted-foreground;
     font-family: 'IBM Plex Mono', monospace;
   }
 
@@ -118,14 +86,33 @@
   }
 
   .form-input-base {
-    @apply w-full px-4 py-3 bg-transparent border-b border-border focus:border-primary outline-none transition-colors text-sm;
+    @apply w-full px-4 py-3.5 bg-transparent border border-border rounded-lg focus:border-primary outline-none transition-colors text-sm text-foreground placeholder:text-muted-foreground;
   }
 
   .card-interactive {
-    @apply border rounded-2xl p-5 cursor-pointer transition-all duration-200;
+    @apply border border-border rounded-2xl cursor-pointer transition-all duration-200;
   }
 
   .card-interactive:hover {
-    border-color: hsl(var(--foreground));
+    border-color: hsl(var(--primary));
+  }
+
+  .gold-text {
+    color: hsl(var(--primary));
+  }
+
+  .gold-italic {
+    color: hsl(var(--primary));
+    font-style: italic;
+  }
+
+  /* Scrolling marquee */
+  @keyframes marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+
+  .animate-marquee {
+    animation: marquee 30s linear infinite;
   }
 }
