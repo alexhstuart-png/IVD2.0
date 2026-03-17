@@ -2,19 +2,19 @@ import { useState } from "react";
 import { Menu, X } from "lucide-react";
 
 const navLinks = [
-  { label: "Services", href: "#services" },
-  { label: "Process", href: "#process" },
-  { label: "Contact", href: "#contact" },
+  { label: "SERVICES", href: "#services" },
+  { label: "ABOUT", href: "#why" },
+  { label: "CONTACT", href: "#contact" },
 ];
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/90 backdrop-blur-md border-b border-border">
       <div className="section-container flex items-center justify-between h-16">
-        <a href="/" className="text-lg font-semibold tracking-tight text-foreground">
-          Iron Vault Digital
+        <a href="/" className="flex items-center gap-2">
+          <span className="text-sm font-bold tracking-widest gold-text border border-primary px-2 py-0.5">IVD</span>
         </a>
 
         {/* Desktop */}
@@ -23,16 +23,16 @@ const Navbar = () => {
             <a
               key={link.href}
               href={link.href}
-              className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+              className="text-[11px] tracking-[0.15em] font-medium text-muted-foreground hover:text-foreground transition-colors"
             >
               {link.label}
             </a>
           ))}
           <a
             href="#contact"
-            className="px-5 py-2 bg-primary text-primary-foreground text-sm font-medium rounded-lg hover:opacity-90 transition-opacity"
+            className="px-5 py-2 border border-primary text-primary text-[11px] tracking-[0.15em] font-semibold hover:bg-primary hover:text-primary-foreground transition-all"
           >
-            Get Started
+            UNLOCK GROWTH
           </a>
         </div>
 
@@ -55,7 +55,7 @@ const Navbar = () => {
                 key={link.href}
                 href={link.href}
                 onClick={() => setIsOpen(false)}
-                className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                className="text-[11px] tracking-[0.15em] font-medium text-muted-foreground hover:text-foreground transition-colors"
               >
                 {link.label}
               </a>
@@ -63,9 +63,9 @@ const Navbar = () => {
             <a
               href="#contact"
               onClick={() => setIsOpen(false)}
-              className="px-5 py-2 bg-primary text-primary-foreground text-sm font-medium rounded-lg hover:opacity-90 transition-opacity text-center"
+              className="px-5 py-2 border border-primary text-primary text-[11px] tracking-[0.15em] font-semibold hover:bg-primary hover:text-primary-foreground transition-all text-center"
             >
-              Get Started
+              UNLOCK GROWTH
             </a>
           </div>
         </div>
