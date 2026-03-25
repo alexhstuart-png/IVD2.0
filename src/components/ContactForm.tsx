@@ -1,9 +1,32 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { motion } from "framer-motion";
 import { Mail, MapPin, Zap, Phone } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 const ContactForm = () => {
   const [activeTab, setActiveTab] = useState<"enquiry" | "call">("enquiry");
+  const navigate = useNavigate();
+  const enquiryFormRef = useRef<HTMLFormElement>(null);
+  const callFormRef = useRef<HTMLFormElement>(null);
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const form = e.currentTarget;
+    const formData = new FormData(form);
+    const body = new URLSearchParams(formData as unknown as Record<string, string>).toString();
+
+    try {
+      await fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body,
+      });
+    } catch {
+      // Submit even if fetch fails
+    }
+
+    navigate("/success");
+  };
 
   return (
     <section id="contact" className="py-24 md:py-32 bg-surface-sunken">
@@ -78,10 +101,10 @@ const ContactForm = () => {
             {/* Enquiry form */}
             <div className="lg:col-span-2">
               <form
+                ref={enquiryFormRef}
                 name="contact-v1"
-                method="POST"
                 data-netlify="true"
-                action="/success"
+                onSubmit={handleSubmit}
                 className="space-y-6"
               >
                 <input type="hidden" name="form-name" value="contact-v1" />
@@ -245,10 +268,10 @@ const ContactForm = () => {
             </div>
 
             <form
+              ref={callFormRef}
               name="book-call"
-              method="POST"
               data-netlify="true"
-              action="/success"
+              onSubmit={handleSubmit}
               className="space-y-6"
             >
               <input type="hidden" name="form-name" value="book-call" />
