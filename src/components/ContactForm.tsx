@@ -1,5 +1,6 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
-import { Mail, MapPin, Zap } from "lucide-react";
+import { Mail, MapPin, Zap, Phone } from "lucide-react";
 
 const ContactForm = () => {
   return (
