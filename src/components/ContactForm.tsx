@@ -375,6 +375,21 @@ const ContactForm = () => {
         )}
       </div>
 
+      {/* Hidden Netlify form for contact-v1 bot detection */}
+      <form name="contact-v1" data-netlify="true" hidden>
+        <input type="hidden" name="form-name" value="contact-v1" />
+        <input name="name" />
+        <input name="business" />
+        <input name="email" />
+        <input name="phone" />
+        <input name="service" />
+        <input name="services[]" />
+        <input name="addons[]" />
+        <input name="timeline" />
+        <input name="message" />
+        <input name="budget" />
+      </form>
+
       {/* Hidden Netlify form for book-call bot detection */}
       <form name="book-call" data-netlify="true" hidden>
         <input type="hidden" name="form-name" value="book-call" />
