@@ -2,21 +2,20 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const STORAGE_KEY = "ivd_access_granted";
+const DELAY_MS = 8000;
 
 const WelcomeGate = ({ children }: { children: React.ReactNode }) => {
-  const [granted, setGranted] = useState(false);
-  const [loading, setLoading] = useState(true);
+  const [showGate, setShowGate] = useState(false);
+  const [dismissed, setDismissed] = useState(false);
   const [name, setName] = useState("");
-  const [company, setCompany] = useState("");
   const [email, setEmail] = useState("");
   const [errors, setErrors] = useState<Record<string, string>>({});
 
   useEffect(() => {
     const stored = localStorage.getItem(STORAGE_KEY);
-    if (stored === "true") {
-      setGranted(true);
-    }
-    setLoading(false);
+    if (stored === "true") return;
+    const timer = setTimeout(() => setShowGate(true), DELAY_MS);
+    return () => clearTimeout(timer);
   }, []);
 
   const validate = () => {
