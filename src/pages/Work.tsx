@@ -6,30 +6,8 @@ import { ArrowLeft, ArrowRight } from "lucide-react";
 
 const projects = [
   {
-    slug: "ecommerce-growth",
-    num: "01",
-    title: "E-Commerce Growth Engine",
-    category: "E-Commerce / Web Design",
-    hero: "Turn your online store into a revenue machine with a full-stack digital strategy.",
-    brief: "We rebuild e-commerce experiences from the ground up — optimising every touchpoint from landing page to checkout. Combined with paid media and automated email flows, we create systems that scale revenue predictably.",
-    services: ["Web Design & Dev", "Paid Media", "Email Marketing"],
-    deliverables: [
-      "Complete store redesign with mobile-first, conversion-optimised UX",
-      "Meta & Google Shopping campaign setup with custom audience targeting",
-      "Welcome flow, abandoned cart, and post-purchase email sequences",
-      "Product page optimisation with A/B testing framework",
-      "Analytics dashboard with revenue attribution tracking",
-    ],
-    outcomes: [
-      { metric: "Revenue Growth", description: "Scalable ad spend and email automation driving consistent monthly revenue increases" },
-      { metric: "Higher ROAS", description: "Precision-targeted campaigns that maximise every dollar of ad spend" },
-      { metric: "Recovered Sales", description: "Automated flows that recapture abandoned carts and re-engage lapsed customers" },
-      { metric: "Faster Load Times", description: "Speed-optimised builds that reduce bounce rates and improve conversions" },
-    ],
-  },
-  {
     slug: "lead-generation",
-    num: "02",
+    num: "01",
     title: "Lead Generation & SEO",
     category: "Lead Gen / SEO",
     hero: "Dominate search rankings and build a predictable pipeline of qualified leads.",
@@ -47,6 +25,28 @@ const projects = [
       { metric: "Qualified Leads", description: "Landing pages engineered to convert visitors into booked calls" },
       { metric: "Organic Traffic", description: "Compounding content strategy that grows traffic month over month" },
       { metric: "Pipeline Value", description: "Measurable revenue generated directly from organic search" },
+    ],
+  },
+  {
+    slug: "ecommerce-growth",
+    num: "02",
+    title: "E-Commerce Growth Engine",
+    category: "E-Commerce / Web Design",
+    hero: "Turn your online store into a revenue machine with a full-stack digital strategy.",
+    brief: "We rebuild e-commerce experiences from the ground up — optimising every touchpoint from landing page to checkout. Combined with paid media and automated email flows, we create systems that scale revenue predictably.",
+    services: ["Web Design & Dev", "Paid Media", "Email Marketing"],
+    deliverables: [
+      "Complete store redesign with mobile-first, conversion-optimised UX",
+      "Meta & Google Shopping campaign setup with custom audience targeting",
+      "Welcome flow, abandoned cart, and post-purchase email sequences",
+      "Product page optimisation with A/B testing framework",
+      "Analytics dashboard with revenue attribution tracking",
+    ],
+    outcomes: [
+      { metric: "Revenue Growth", description: "Scalable ad spend and email automation driving consistent monthly revenue increases" },
+      { metric: "Higher ROAS", description: "Precision-targeted campaigns that maximise every dollar of ad spend" },
+      { metric: "Recovered Sales", description: "Automated flows that recapture abandoned carts and re-engage lapsed customers" },
+      { metric: "Faster Load Times", description: "Speed-optimised builds that reduce bounce rates and improve conversions" },
     ],
   },
   {
