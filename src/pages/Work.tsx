@@ -2,91 +2,95 @@ import { useParams, Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { ArrowLeft, ArrowRight, ExternalLink } from "lucide-react";
+import { ArrowLeft, ArrowRight } from "lucide-react";
 
 const projects = [
   {
-    slug: "coastline-ecommerce",
+    slug: "ecommerce-growth",
     num: "01",
-    title: "Coastline Surf Co.",
+    title: "E-Commerce Growth Engine",
     category: "E-Commerce / Web Design",
-    hero: "Took a local surf brand from $12K/mo to $87K/mo in 90 days.",
-    brief: "Coastline Surf Co. had a cult following but a website that leaked revenue. We rebuilt their entire digital presence — store, ads, email — and turned fans into buyers.",
+    hero: "Turn your online store into a revenue machine with a full-stack digital strategy.",
+    brief: "We rebuild e-commerce experiences from the ground up — optimising every touchpoint from landing page to checkout. Combined with paid media and automated email flows, we create systems that scale revenue predictably.",
     services: ["Web Design & Dev", "Paid Media", "Email Marketing"],
-    results: [
-      { metric: "625%", label: "Revenue increase" },
-      { metric: "4.2x", label: "ROAS on Meta" },
-      { metric: "38%", label: "Email open rate" },
-      { metric: "2.1s", label: "Page load time" },
+    deliverables: [
+      "Complete store redesign with mobile-first, conversion-optimised UX",
+      "Meta & Google Shopping campaign setup with custom audience targeting",
+      "Welcome flow, abandoned cart, and post-purchase email sequences",
+      "Product page optimisation with A/B testing framework",
+      "Analytics dashboard with revenue attribution tracking",
     ],
-    approach: [
-      "Audited the existing Shopify store and identified 14 conversion-killing UX issues.",
-      "Rebuilt the storefront with a mobile-first, speed-optimised design focused on product storytelling.",
-      "Launched Meta and Google Shopping campaigns with custom audiences built from existing customer data.",
-      "Built a 7-part welcome flow and abandoned cart sequence that recovered 22% of lost sales.",
+    outcomes: [
+      { metric: "Revenue Growth", description: "Scalable ad spend and email automation driving consistent monthly revenue increases" },
+      { metric: "Higher ROAS", description: "Precision-targeted campaigns that maximise every dollar of ad spend" },
+      { metric: "Recovered Sales", description: "Automated flows that recapture abandoned carts and re-engage lapsed customers" },
+      { metric: "Faster Load Times", description: "Speed-optimised builds that reduce bounce rates and improve conversions" },
     ],
   },
   {
-    slug: "apex-construction",
+    slug: "lead-generation",
     num: "02",
-    title: "Apex Construction Group",
+    title: "Lead Generation & SEO",
     category: "Lead Gen / SEO",
-    hero: "From page 4 to position 1 — generating 40+ qualified leads per month.",
-    brief: "Apex was invisible online. Competitors with half the experience were stealing contracts. We built an SEO engine that made Apex the authority in commercial construction across Sydney.",
+    hero: "Dominate search rankings and build a predictable pipeline of qualified leads.",
+    brief: "For service-based businesses that need a steady flow of high-quality leads. We combine SEO authority-building with conversion-focused landing pages to turn organic traffic into booked calls and signed contracts.",
     services: ["SEO & Content", "Web Design & Dev", "Brand Strategy"],
-    results: [
-      { metric: "#1", label: "Google ranking for 12 keywords" },
-      { metric: "40+", label: "Leads per month" },
-      { metric: "312%", label: "Organic traffic increase" },
-      { metric: "$2.4M", label: "Pipeline generated" },
+    deliverables: [
+      "Deep competitor and keyword analysis across your vertical",
+      "30+ authoritative content pieces targeting high-intent search terms",
+      "Conversion-focused landing pages for each service area",
+      "Local SEO strategy including Google Business optimisation",
+      "Monthly reporting with keyword tracking and lead attribution",
     ],
-    approach: [
-      "Performed deep competitor and keyword analysis across the commercial construction vertical.",
-      "Created 30+ authoritative content pieces targeting high-intent search terms.",
-      "Redesigned the website with conversion-focused landing pages for each service area.",
-      "Implemented local SEO strategy including Google Business optimisation and citation building.",
+    outcomes: [
+      { metric: "Page 1 Rankings", description: "Strategic content and technical SEO that earns top positions for money keywords" },
+      { metric: "Qualified Leads", description: "Landing pages engineered to convert visitors into booked calls" },
+      { metric: "Organic Traffic", description: "Compounding content strategy that grows traffic month over month" },
+      { metric: "Pipeline Value", description: "Measurable revenue generated directly from organic search" },
     ],
   },
   {
-    slug: "revive-wellness",
+    slug: "social-brand-building",
     num: "03",
-    title: "Revive Wellness Clinic",
+    title: "Social Media & Brand Building",
     category: "Social Media / Brand",
-    hero: "Built a brand that went from 800 followers to 28K in 6 months.",
-    brief: "Revive had the treatments but zero online presence. We created a brand identity and social strategy that positioned them as the premium wellness destination in Melbourne.",
+    hero: "Build an audience that trusts you, engages with you, and buys from you.",
+    brief: "We create brand identities and social strategies that turn businesses into recognised authorities. From content creation to community management to paid promotion — we handle the full social engine.",
     services: ["Social Media", "Brand Strategy", "Paid Media"],
-    results: [
-      { metric: "28K", label: "Instagram followers" },
-      { metric: "3,400%", label: "Engagement increase" },
-      { metric: "72%", label: "Bookings from social" },
-      { metric: "5.8x", label: "ROAS on campaigns" },
+    deliverables: [
+      "Complete brand identity — logo, colour palette, typography, tone of voice",
+      "Monthly content calendar with reels, carousels, and stories",
+      "Community management and audience engagement strategy",
+      "Targeted social ad campaigns to local and niche audiences",
+      "Referral and UGC programs to amplify organic reach",
     ],
-    approach: [
-      "Developed a premium brand identity — logo, colour palette, typography, tone of voice.",
-      "Created a content calendar mixing educational reels, client transformations, and behind-the-scenes.",
-      "Ran targeted Instagram and Facebook campaigns to local audiences within 15km radius.",
-      "Built a referral program promoted through social that drove 30% of new bookings.",
+    outcomes: [
+      { metric: "Audience Growth", description: "Consistent follower growth through organic content and strategic paid promotion" },
+      { metric: "Engagement", description: "Content that stops the scroll and starts conversations" },
+      { metric: "Bookings & Sales", description: "Social presence that directly drives revenue, not just vanity metrics" },
+      { metric: "Brand Recognition", description: "A cohesive identity that positions you as the premium choice in your market" },
     ],
   },
   {
-    slug: "ironclad-finance",
+    slug: "full-digital-overhaul",
     num: "04",
-    title: "Ironclad Financial",
+    title: "Full Digital Overhaul",
     category: "Full Stack / Lead Gen",
-    hero: "Complete digital overhaul generating $180K in new business within Q1.",
-    brief: "A boutique financial advisory firm that relied entirely on referrals. We built the entire digital infrastructure — brand, website, ads, email — and created a predictable lead pipeline.",
+    hero: "Everything your business needs to dominate online — built from the ground up.",
+    brief: "For businesses ready to go all-in. We build the entire digital infrastructure — brand, website, ads, email, SEO — and create a system where every channel feeds into a predictable revenue engine.",
     services: ["Web Design & Dev", "SEO & Content", "Paid Media", "Email Marketing"],
-    results: [
-      { metric: "$180K", label: "Revenue in Q1" },
-      { metric: "86", label: "Qualified leads in 90 days" },
-      { metric: "14%", label: "Conversion rate" },
-      { metric: "52%", label: "Reduction in CAC" },
+    deliverables: [
+      "Trust-first website designed around your industry and audience",
+      "Google Ads strategy with dedicated landing pages per service",
+      "Lead magnet creation and 14-day email nurture sequence",
+      "CRM integration with lead scoring and automated follow-ups",
+      "Full analytics setup with cross-channel attribution",
     ],
-    approach: [
-      "Built a trust-first website designed around compliance requirements and credibility signals.",
-      "Created a Google Ads strategy targeting high-net-worth search terms with dedicated landing pages.",
-      "Developed a lead magnet and email nurture sequence that educated prospects over 14 days.",
-      "Implemented CRM integration and lead scoring to prioritise the highest-value prospects.",
+    outcomes: [
+      { metric: "Revenue Pipeline", description: "A complete system generating measurable revenue from multiple channels" },
+      { metric: "Qualified Leads", description: "Warm prospects nurtured and scored before they ever speak to your team" },
+      { metric: "Higher Conversions", description: "Every touchpoint optimised to move visitors toward action" },
+      { metric: "Lower CAC", description: "Efficient spend across channels that reduces your cost to acquire each customer" },
     ],
   },
 ];
@@ -98,10 +102,10 @@ const WorkIndex = () => (
       <div className="section-container">
         <p className="label-uppercase mb-3">// Our Work</p>
         <h1 className="text-4xl md:text-6xl font-bold tracking-tighter text-foreground mb-6">
-          Results That <span className="gold-italic">Speak</span>
+          What We <span className="gold-italic">Build</span>
         </h1>
         <p className="text-muted-foreground text-sm max-w-xl mb-16">
-          Every project is a case study in precision. Here's what happens when strategy meets execution.
+          Every engagement is built around results. Here's how we deploy the full arsenal for different business goals.
         </p>
 
         <div className="grid gap-6">
@@ -124,12 +128,9 @@ const WorkIndex = () => (
                     <h2 className="text-xl md:text-2xl font-bold text-foreground mb-2">{project.title}</h2>
                     <p className="text-sm text-muted-foreground line-clamp-2">{project.hero}</p>
                   </div>
-                  <div className="hidden md:grid grid-cols-2 gap-x-8 gap-y-2 shrink-0">
-                    {project.results.slice(0, 2).map((r) => (
-                      <div key={r.label}>
-                        <p className="text-lg font-bold gold-text">{r.metric}</p>
-                        <p className="text-[10px] text-muted-foreground uppercase tracking-wider">{r.label}</p>
-                      </div>
+                  <div className="hidden md:flex flex-wrap gap-2 shrink-0 max-w-[200px]">
+                    {project.services.map((s) => (
+                      <span key={s} className="px-2 py-0.5 border border-border text-[9px] tracking-[0.1em] uppercase text-muted-foreground">{s}</span>
                     ))}
                   </div>
                   <ArrowRight className="w-5 h-5 text-muted-foreground group-hover:text-primary transition-colors shrink-0" />
@@ -184,42 +185,20 @@ const WorkDetail = () => {
         </div>
       </section>
 
-      {/* Results */}
-      <section className="py-16 bg-surface-sunken">
-        <div className="section-container">
-          <p className="label-uppercase mb-8">// Results</p>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-            {project.results.map((r, i) => (
-              <motion.div
-                key={r.label}
-                initial={{ opacity: 0, y: 16 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: i * 0.1 }}
-                className="text-center md:text-left"
-              >
-                <p className="text-3xl md:text-4xl font-bold gold-text mb-1">{r.metric}</p>
-                <p className="text-xs text-muted-foreground uppercase tracking-wider">{r.label}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Brief */}
-      <section className="py-16">
+      <section className="py-16 bg-surface-sunken">
         <div className="section-container max-w-3xl">
-          <p className="label-uppercase mb-4">// The Brief</p>
+          <p className="label-uppercase mb-4">// The Approach</p>
           <p className="text-foreground leading-relaxed">{project.brief}</p>
         </div>
       </section>
 
-      {/* Approach */}
-      <section className="py-16 bg-surface-sunken">
+      {/* Deliverables */}
+      <section className="py-16">
         <div className="section-container max-w-3xl">
-          <p className="label-uppercase mb-8">// Our Approach</p>
+          <p className="label-uppercase mb-8">// What You Get</p>
           <div className="space-y-6">
-            {project.approach.map((step, i) => (
+            {project.deliverables.map((step, i) => (
               <motion.div
                 key={i}
                 initial={{ opacity: 0, x: -16 }}
@@ -236,11 +215,33 @@ const WorkDetail = () => {
         </div>
       </section>
 
+      {/* Outcomes */}
+      <section className="py-16 bg-surface-sunken">
+        <div className="section-container">
+          <p className="label-uppercase mb-8">// Expected Outcomes</p>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {project.outcomes.map((r, i) => (
+              <motion.div
+                key={r.metric}
+                initial={{ opacity: 0, y: 16 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: i * 0.1 }}
+                className="bg-card p-6 border border-border"
+              >
+                <p className="text-base font-bold gold-text mb-2">{r.metric}</p>
+                <p className="text-sm text-muted-foreground leading-relaxed">{r.description}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* CTA */}
       <section className="py-20">
         <div className="section-container text-center">
           <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-4">
-            Want results like <span className="gold-italic">these</span>?
+            Ready to <span className="gold-italic">start</span>?
           </h2>
           <p className="text-sm text-muted-foreground mb-8 max-w-md mx-auto">
             Let's talk about what Iron Vault Digital can build for your business.
@@ -256,7 +257,7 @@ const WorkDetail = () => {
         <div className="section-container">
           <Link to={`/work/${nextProject.slug}`} className="flex items-center justify-between group">
             <div>
-              <p className="text-[10px] text-muted-foreground uppercase tracking-widest mb-1">Next Project</p>
+              <p className="text-[10px] text-muted-foreground uppercase tracking-widest mb-1">Next</p>
               <p className="text-lg font-semibold text-foreground group-hover:text-primary transition-colors">{nextProject.title}</p>
             </div>
             <ArrowRight className="w-5 h-5 text-muted-foreground group-hover:text-primary transition-colors" />
