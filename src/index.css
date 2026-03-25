@@ -89,6 +89,16 @@
     @apply w-full px-4 py-3.5 bg-transparent border border-border rounded-lg focus:border-primary outline-none transition-colors text-sm text-foreground placeholder:text-muted-foreground;
   }
 
+  select.form-input-base {
+    background-color: hsl(var(--background));
+  }
+
+  select.form-input-base option {
+    background-color: hsl(var(--card));
+    color: hsl(var(--foreground));
+    padding: 8px;
+  }
+
   .card-interactive {
     @apply border border-border rounded-2xl cursor-pointer transition-all duration-200;
   }
