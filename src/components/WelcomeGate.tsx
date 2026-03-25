@@ -108,6 +108,8 @@ const WelcomeGate = ({ children }: { children: React.ReactNode }) => {
                 <div>
                   <input
                     type="text"
+                    name="name"
+                    autoComplete="name"
                     placeholder="Your Name"
                     value={name}
                     onChange={(e) => setName(e.target.value)}
@@ -119,6 +121,8 @@ const WelcomeGate = ({ children }: { children: React.ReactNode }) => {
                 <div>
                   <input
                     type="email"
+                    name="email"
+                    autoComplete="email"
                     placeholder="Email Address"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
