@@ -79,7 +79,7 @@ const ContactForm = () => {
                 <Mail size={18} className="gold-text mt-0.5 flex-shrink-0" />
                 <div>
                   <p className="label-uppercase mb-1">Email</p>
-                  <p className="text-sm text-foreground">alex@ironvaultdigital.com.au</p>
+                  <p className="text-sm text-foreground">hello@ironvaultdigital.com.au</p>
                 </div>
               </div>
               <div className="flex items-start gap-4">
