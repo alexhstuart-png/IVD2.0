@@ -41,7 +41,7 @@ const FAQ: { keywords: string[]; answer: string }[] = [
   {
     keywords: ["contact", "email", "phone", "reach", "talk", "call"],
     answer:
-      "You can reach us at alex@ironvaultdigital.com.au — or fill out the contact form on this page and we'll get back to you within a few hours.",
+      "You can reach us at hello@ironvaultdigital.com.au — or fill out the contact form on this page and we'll get back to you within a few hours.",
   },
   {
     keywords: ["location", "where", "based", "perth", "australia"],
