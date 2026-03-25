@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const STORAGE_KEY = "ivd_access_granted";
-const DELAY_MS = 8000;
+const DELAY_MS = 30000;
 
 const WelcomeGate = ({ children }: { children: React.ReactNode }) => {
   const [showGate, setShowGate] = useState(false);
