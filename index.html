@@ -89,30 +89,30 @@ document.addEventListener("click", function(e) {
   const el = e.target.closest("a, button");
   if (!el) return;
 
-  const text = (el.innerText || "").trim();
+  const text = (el.innerText || "").toLowerCase();
 
-  if (text === "OPEN THE VAULT") {
+  if (text.includes("vault")) {
     gtag("event", "cta_click", {
       event_category: "CTA",
       event_label: "Open The Vault"
     });
-    console.log("CTA Open The Vault fired");
+    console.log("CTA Vault fired");
   }
 
-  if (text === "UNLOCK GROWTH") {
+  if (text.includes("growth")) {
     gtag("event", "cta_click", {
       event_category: "CTA",
       event_label: "Unlock Growth"
     });
-    console.log("CTA Unlock Growth fired");
+    console.log("CTA Growth fired");
   }
 
-  if (text === "OUR ARSENAL") {
+  if (text.includes("arsenal")) {
     gtag("event", "cta_click", {
       event_category: "CTA",
       event_label: "Our Arsenal"
     });
-    console.log("CTA Our Arsenal fired");
+    console.log("CTA Arsenal fired");
   }
 });
 
