@@ -65,9 +65,8 @@ const Navbar = () => {
             ))}
             <a
               href="#contact"
-              onClick={() => setIsOpen(false)}
+              onClick={() => { trackEvent("cta_click", { cta_label: "Unlock Growth", cta_location: "navbar_mobile" }); setIsOpen(false); }}
               className="px-5 py-2 border border-primary text-primary text-[11px] tracking-[0.15em] font-semibold hover:bg-primary hover:text-primary-foreground transition-all text-center"
-              onClick={() => { trackEvent("cta_click", { cta_label: "Unlock Growth", cta_location: "navbar_mobile" }); setOpen(false); }}
             >
               UNLOCK GROWTH
             </a>
