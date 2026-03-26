@@ -33,7 +33,7 @@ const Navbar = () => {
           <a
             href="#contact"
             className="px-5 py-2 border border-primary text-primary text-[11px] tracking-[0.15em] font-semibold hover:bg-primary hover:text-primary-foreground transition-all"
-            onClick={() => trackEvent("cta_click", { cta_label: "Unlock Growth", cta_location: "navbar" })}
+            onClick={() => trackCTA("Unlock Growth")}
           >
             UNLOCK GROWTH
           </a>
