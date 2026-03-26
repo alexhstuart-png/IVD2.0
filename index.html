@@ -79,5 +79,53 @@
 
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
+    <div id="root"></div>
+<script type="module" src="/src/main.tsx"></script>
+
+<script>
+document.addEventListener("click", function(e) {
+  if (typeof gtag !== "function") return;
+
+  const el = e.target.closest("a, button");
+  if (!el) return;
+
+  const text = (el.innerText || "").trim();
+
+  if (text === "OPEN THE VAULT") {
+    gtag("event", "cta_click", {
+      event_category: "CTA",
+      event_label: "Open The Vault"
+    });
+    console.log("CTA Open The Vault fired");
+  }
+
+  if (text === "UNLOCK GROWTH") {
+    gtag("event", "cta_click", {
+      event_category: "CTA",
+      event_label: "Unlock Growth"
+    });
+    console.log("CTA Unlock Growth fired");
+  }
+
+  if (text === "OUR ARSENAL") {
+    gtag("event", "cta_click", {
+      event_category: "CTA",
+      event_label: "Our Arsenal"
+    });
+    console.log("CTA Our Arsenal fired");
+  }
+});
+
+document.addEventListener("submit", function() {
+  if (typeof gtag !== "function") return;
+
+  gtag("event", "form_submit", {
+    event_category: "Lead",
+    event_label: "Contact Form"
+  });
+
+  console.log("Form submit fired");
+});
+</script>
   </body>
 </html>
