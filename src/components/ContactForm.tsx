@@ -14,7 +14,13 @@ const ContactForm = () => {
     e.preventDefault();
     const form = e.currentTarget;
     const formData = new FormData(form);
+    const formName = formData.get("form-name") as string;
     const body = new URLSearchParams(formData as unknown as Record<string, string>).toString();
+
+    trackEvent("form_submit", {
+      event_category: "Lead",
+      form_name: formName,
+    });
 
     try {
       await fetch("/", {
