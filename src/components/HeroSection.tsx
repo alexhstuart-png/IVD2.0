@@ -68,7 +68,7 @@ const HeroSection = () => {
             </a>
             <a
               href="#services"
-              onClick={() => trackEvent("cta_click", { cta_label: "Our Arsenal", cta_location: "hero" })}
+              onClick={() => trackCTA("Our Arsenal")}
               className="inline-flex items-center justify-center px-7 py-3.5 border border-border text-foreground font-semibold text-[11px] tracking-[0.12em] uppercase hover:border-primary transition-colors"
             >
               Our Arsenal
