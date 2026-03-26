@@ -17,10 +17,7 @@ const ContactForm = () => {
     const formName = formData.get("form-name") as string;
     const body = new URLSearchParams(formData as unknown as Record<string, string>).toString();
 
-    trackEvent("form_submit", {
-      event_category: "Lead",
-      form_name: formName,
-    });
+    trackFormSubmit("Contact Form");
 
     try {
       await fetch("/", {
