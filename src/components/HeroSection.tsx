@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import vaultGraphic from "@/assets/vault-graphic.png";
+import { trackEvent } from "@/lib/gtag";
 
 const ease = [0.16, 1, 0.3, 1] as const;
 
