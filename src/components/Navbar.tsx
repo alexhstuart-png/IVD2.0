@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
-import { trackEvent } from "@/lib/gtag";
+import { trackCTA } from "@/lib/gtag";
 
 const navLinks = [
   { label: "SERVICES", href: "/#services" },
