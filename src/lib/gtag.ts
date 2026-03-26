@@ -14,3 +14,9 @@ export const trackEvent = (
     window.gtag("event", eventName, params);
   }
 };
+
+export const trackCTA = (label: string) =>
+  trackEvent("cta_click", { event_category: "CTA", event_label: label });
+
+export const trackFormSubmit = (label: string) =>
+  trackEvent("form_submit", { event_category: "Lead", event_label: label });

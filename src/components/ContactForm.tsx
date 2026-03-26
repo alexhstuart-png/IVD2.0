@@ -2,7 +2,7 @@ import { useState, useRef } from "react";
 import { motion } from "framer-motion";
 import { Mail, MapPin, Zap, Phone } from "lucide-react";
 import { useNavigate } from "react-router-dom";
-import { trackEvent } from "@/lib/gtag";
+import { trackFormSubmit } from "@/lib/gtag";
 
 const ContactForm = () => {
   const [activeTab, setActiveTab] = useState<"enquiry" | "call">("enquiry");
@@ -17,10 +17,7 @@ const ContactForm = () => {
     const formName = formData.get("form-name") as string;
     const body = new URLSearchParams(formData as unknown as Record<string, string>).toString();
 
-    trackEvent("form_submit", {
-      event_category: "Lead",
-      form_name: formName,
-    });
+    trackFormSubmit("Contact Form");
 
     try {
       await fetch("/", {

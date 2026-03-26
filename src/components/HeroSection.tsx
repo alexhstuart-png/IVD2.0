@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import vaultGraphic from "@/assets/vault-graphic.png";
-import { trackEvent } from "@/lib/gtag";
+import { trackCTA } from "@/lib/gtag";
 
 const ease = [0.16, 1, 0.3, 1] as const;
 
@@ -61,14 +61,14 @@ const HeroSection = () => {
           >
             <a
               href="#contact"
-              onClick={() => trackEvent("cta_click", { cta_label: "Open the Vault", cta_location: "hero" })}
+              onClick={() => trackCTA("Open The Vault")}
               className="inline-flex items-center justify-center px-7 py-3.5 bg-primary text-primary-foreground font-semibold text-[11px] tracking-[0.12em] uppercase hover:opacity-90 transition-opacity"
             >
               Open the Vault
             </a>
             <a
               href="#services"
-              onClick={() => trackEvent("cta_click", { cta_label: "Our Arsenal", cta_location: "hero" })}
+              onClick={() => trackCTA("Our Arsenal")}
               className="inline-flex items-center justify-center px-7 py-3.5 border border-border text-foreground font-semibold text-[11px] tracking-[0.12em] uppercase hover:border-primary transition-colors"
             >
               Our Arsenal
