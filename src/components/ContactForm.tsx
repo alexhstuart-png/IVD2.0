@@ -2,6 +2,7 @@ import { useState, useRef } from "react";
 import { motion } from "framer-motion";
 import { Mail, MapPin, Zap, Phone } from "lucide-react";
 import { useNavigate } from "react-router-dom";
+import { trackEvent } from "@/lib/gtag";
 
 const ContactForm = () => {
   const [activeTab, setActiveTab] = useState<"enquiry" | "call">("enquiry");
