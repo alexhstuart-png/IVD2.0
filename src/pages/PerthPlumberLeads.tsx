@@ -1,65 +1,65 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { Phone, Mail, MapPin, Clock, ChevronDown, Check, ArrowRight, BarChart3, Star, Zap, PhoneCall, MessageSquare, TrendingUp } from "lucide-react";
+import { ChevronDown, Check, ArrowRight, PhoneCall, MessageSquare, Star, Zap, TrendingUp, MapPin } from "lucide-react";
 import { trackCTA, trackFormSubmit } from "@/lib/gtag";
 
 const ease = [0.16, 1, 0.3, 1] as const;
 
 const problems = [
-  "Your website looks fine — but it doesn't convert visitors into calls or quote requests.",
-  "You miss leads after hours or when you're on a job and can't answer the phone.",
-  "Your Google Business Profile is sitting there doing nothing — or worse, pushing leads to competitors.",
-  "You rely too heavily on word of mouth and have no system to generate consistent new work.",
+  "Your website looks fine — but it doesn't turn visitors into calls or quote requests.",
+  "You miss leads after hours or when you're on a job and can't pick up.",
+  "Your Google Business Profile isn't pulling its weight — or it's pushing leads to competitors.",
+  "You rely too heavily on word of mouth with no system to bring in consistent new work.",
   "Competitors with worse skills look more credible online — and win the job first.",
 ];
 
 const deliverables = [
-  "Conversion-focused plumbing website or landing page improvements",
-  "Service page structure for high-intent plumbing jobs (blocked drains, hot water, gas fitting, etc.)",
-  "Google Business Profile optimisation",
-  "Call tracking and lead tracking",
-  "Missed-call text back setup",
-  "Quote request form optimisation",
+  "Homepage and CTA improvements",
+  "Quote form and contact flow fixes",
+  "Google Business Profile recommendations",
+  "Trust section improvements (reviews, credentials, photos)",
+  "Missed-lead follow-up template",
   "Review request system",
-  "Monthly performance reporting",
+  "Simple reporting on the numbers that matter",
 ];
 
-const benefits = [
+const outcomes = [
   { icon: PhoneCall, title: "More inbound calls", desc: "From people actively searching for a plumber in Perth." },
-  { icon: MessageSquare, title: "More quote requests", desc: "Capture leads 24/7, even when you're on a job." },
+  { icon: MessageSquare, title: "More quote requests", desc: "Capture enquiries 24/7, even when you're on a job." },
+  { icon: Zap, title: "Faster lead response", desc: "So no enquiry goes cold while you're under a house." },
   { icon: Star, title: "Better local trust", desc: "Look like the most credible plumber in your area." },
-  { icon: Zap, title: "Faster lead response", desc: "Automated follow-up so no lead goes cold." },
-  { icon: TrendingUp, title: "Fewer missed opportunities", desc: "Stop losing jobs to slower follow-up or weaker online presence." },
-  { icon: BarChart3, title: "More jobs from existing traffic", desc: "Get more from the people already visiting your site." },
+  { icon: TrendingUp, title: "Fewer missed jobs", desc: "Stop losing work to slower follow-up or a weaker online presence." },
 ];
 
 const steps = [
-  { num: "01", title: "Audit", desc: "We review your current website, Google profile, and lead flow. We show you exactly where you're losing jobs." },
-  { num: "02", title: "Build", desc: "We fix the weak points — your website conversion, local visibility, and follow-up systems." },
-  { num: "03", title: "Grow", desc: "We track results and improve performance month over month. You get more calls, more quotes, more booked jobs." },
+  { num: "01", title: "Audit", desc: "We review your website, Google profile, and enquiry flow to find the biggest leaks costing you jobs." },
+  { num: "02", title: "Fix", desc: "We improve the highest-impact parts of your website, trust stack, and lead capture process." },
+  { num: "03", title: "Follow Up", desc: "You get the updated assets, clear next steps, and a simple plan to improve results from there." },
 ];
 
 const whyPoints = [
-  "Built for local service businesses — not SaaS startups or e-commerce",
   "Focused on booked jobs, not vanity metrics like impressions or clicks",
-  "Simple, practical, conversion-first execution",
-  "Tailored specifically for Perth plumbing businesses",
+  "Built for local service businesses, not e-commerce brands",
+  "Simple, practical fixes you can implement fast",
+  "Specific to Perth plumbing businesses",
+  "Clear first-step offer with no bloated retainer pitch",
+];
+
+const measures = [
+  "Inbound calls",
+  "Quote requests",
+  "Response speed",
+  "Review growth",
+  "Booked jobs from website enquiries",
 ];
 
 const faqs = [
-  { q: "Is this just a website?", a: "No. This is a customer acquisition system. It includes your website, but also covers Google optimisation, lead capture, missed-call follow-up, review generation, and performance tracking. The website is one piece of a bigger machine." },
-  { q: "Do you work only with Perth plumbers?", a: "We work with local service businesses across Australia, but this specific offer is built for plumbing businesses in Perth. The strategy, copy, and setup are all tailored to your local market." },
-  { q: "Can this work if I already have a website?", a: "Yes. We can work with your existing site and improve the parts that matter most — conversion, speed, mobile experience, and lead capture. Or we can rebuild if that makes more sense." },
-  { q: "Do I need to run ads for this to work?", a: "No. This system is designed to get more from your organic traffic and Google presence first. Ads can be layered on later if you want to scale faster, but they're not required." },
-  { q: "What happens in the audit?", a: "We review your website, Google Business Profile, online reviews, and current lead flow. Then we walk you through what's working, what's not, and what to fix first. No cost, no obligation." },
-  { q: "How quickly can we get started?", a: "Most clients are fully set up within 2–3 weeks after the audit. Some quick wins — like Google profile fixes and missed-call texting — can be live within days." },
-];
-
-const mockMetrics = [
-  { label: "Calls This Month", value: "47", trend: "+12%" },
-  { label: "Quote Requests", value: "31", trend: "+18%" },
-  { label: "Google Reviews", value: "4.8★", trend: "+6 new" },
-  { label: "Avg. Response Time", value: "< 2 min", trend: "Automated" },
+  { q: "Is this just a website redesign?", a: "No. The Conversion Sprint fixes the parts of your website, Google profile, and follow-up process that are costing you jobs. Sometimes that means design changes, sometimes it's the form, the trust signals, or how you handle missed calls. We focus on whatever has the biggest impact on booked jobs." },
+  { q: "Do you only work with Perth plumbers?", a: "This specific offer is built for plumbing businesses in Perth. The copy, the strategy, and the fixes are all tailored to your local market and the way people search for plumbers here." },
+  { q: "Can this work if I already have a website?", a: "Yes. Most plumbers we talk to already have a site — it just isn't converting well. We work with what you've got and fix the parts that matter most." },
+  { q: "Do I need to run ads for this to work?", a: "No. This is about getting more from the traffic and enquiries you already have. Ads can come later if you want to scale, but they're not required." },
+  { q: "What's the free teardown?", a: "I'll spend 5 minutes reviewing your website and show you the 3 biggest issues likely costing you calls and quote requests. No cost, no obligation — just practical feedback you can use." },
+  { q: "How quickly can we get started?", a: "The teardown takes a day or two. If you go ahead with the Conversion Sprint, most clients are fully done within 7 days." },
 ];
 
 const PerthPlumberLeads = () => {
@@ -72,7 +72,7 @@ const PerthPlumberLeads = () => {
   useEffect(() => {
     document.title = "Perth Plumber Marketing — Get More Booked Jobs | Iron Vault Digital";
     const meta = document.querySelector('meta[name="description"]');
-    if (meta) meta.setAttribute("content", "We help Perth plumbers get more calls, quote requests, and booked jobs through better websites, Google optimisation, and lead follow-up systems.");
+    if (meta) meta.setAttribute("content", "We help Perth plumbers fix the website, trust, and follow-up issues that cost them calls, quote requests, and booked jobs. Get a free 5-minute website teardown.");
   }, []);
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -83,7 +83,7 @@ const PerthPlumberLeads = () => {
 
     try {
       await fetch("/", { method: "POST", headers: { "Content-Type": "application/x-www-form-urlencoded" }, body: body.toString() });
-      trackFormSubmit("Perth Plumber Leads");
+      trackFormSubmit("Perth Plumber Teardown");
       setSubmitted(true);
     } catch {
       alert("Something went wrong. Please try again or call us directly.");
@@ -91,23 +91,23 @@ const PerthPlumberLeads = () => {
   };
 
   const scrollToForm = () => {
-    trackCTA("Book Your Free Plumbing Growth Audit");
+    trackCTA("Get a Free 5-Minute Website Teardown");
     document.getElementById("plumber-contact")?.scrollIntoView({ behavior: "smooth" });
   };
 
-  const scrollToIncluded = () => {
-    trackCTA("See What's Included");
+  const scrollToSolution = () => {
+    trackCTA("See What We Fix");
     document.getElementById("solution")?.scrollIntoView({ behavior: "smooth" });
   };
 
   return (
     <div className="min-h-screen bg-background text-foreground">
-      {/* Minimal top bar */}
+      {/* Top bar */}
       <div className="border-b border-border">
         <div className="section-container flex items-center justify-between py-4">
           <span className="text-sm font-semibold tracking-tight text-foreground">Iron Vault Digital</span>
           <button onClick={scrollToForm} className="hidden sm:inline-flex items-center gap-2 px-5 py-2.5 bg-primary text-primary-foreground text-xs font-semibold tracking-wider uppercase hover:opacity-90 transition-opacity">
-            Book Free Audit
+            Free Website Teardown
           </button>
         </div>
       </div>
@@ -136,7 +136,7 @@ const PerthPlumberLeads = () => {
             transition={{ duration: 0.5, delay: 0.2, ease }}
             className="mt-6 text-muted-foreground max-w-2xl text-base md:text-lg leading-relaxed"
           >
-            We help Perth plumbers turn their website, Google presence, and lead follow-up into a system that generates more calls, quote requests, and booked jobs.
+            We help Perth plumbers fix the website, trust, and follow-up issues that cost them calls, quote requests, and booked jobs.
           </motion.p>
 
           <motion.div
@@ -146,11 +146,11 @@ const PerthPlumberLeads = () => {
             className="mt-10 flex flex-col sm:flex-row gap-4"
           >
             <button onClick={scrollToForm} className="inline-flex items-center justify-center gap-2 px-7 py-4 bg-primary text-primary-foreground font-semibold text-xs tracking-widest uppercase hover:opacity-90 transition-opacity">
-              Book Your Free Plumbing Growth Audit
+              Get a Free 5-Minute Website Teardown
               <ArrowRight className="w-4 h-4" />
             </button>
-            <button onClick={scrollToIncluded} className="inline-flex items-center justify-center px-7 py-4 border border-border text-foreground font-semibold text-xs tracking-widest uppercase hover:border-primary transition-colors">
-              See What's Included
+            <button onClick={scrollToSolution} className="inline-flex items-center justify-center px-7 py-4 border border-border text-foreground font-semibold text-xs tracking-widest uppercase hover:border-primary transition-colors">
+              See What We Fix
             </button>
           </motion.div>
         </div>
@@ -161,8 +161,8 @@ const PerthPlumberLeads = () => {
         <div className="section-container max-w-4xl">
           <span className="label-uppercase">The Problem</span>
           <h2 className="mt-4 text-3xl md:text-4xl font-bold tracking-tighter">
-            You're doing good work.<br />
-            <span className="text-muted-foreground">But you're losing jobs you should be winning.</span>
+            You're already getting attention.<br />
+            <span className="text-muted-foreground">You're just not converting enough of it into booked jobs.</span>
           </h2>
           <div className="mt-12 space-y-0">
             {problems.map((p, i) => (
@@ -185,12 +185,12 @@ const PerthPlumberLeads = () => {
       {/* ─── SOLUTION ─── */}
       <section id="solution" className="py-20 md:py-28 bg-card border-t border-border">
         <div className="section-container max-w-4xl">
-          <span className="label-uppercase">The Solution</span>
+          <span className="label-uppercase">The Fix</span>
           <h2 className="mt-4 text-3xl md:text-4xl font-bold tracking-tighter">
-            Perth Plumber <span className="gold-text">Lead Engine</span>
+            Perth Plumber <span className="gold-text">Conversion Sprint</span>
           </h2>
           <p className="mt-4 text-muted-foreground max-w-2xl text-sm md:text-base leading-relaxed">
-            This isn't just a website. It's a customer acquisition system designed specifically for plumbing businesses in Perth. Every piece is built to generate more calls, capture more leads, and help you book more jobs.
+            A simple 7-day project to fix the biggest conversion leaks in your website and lead flow. No bloated retainer. No 6-month contract. Just the fixes that get you more calls and booked jobs.
           </p>
           <div className="mt-12 grid sm:grid-cols-2 gap-4">
             {deliverables.map((d, i) => (
@@ -210,15 +210,15 @@ const PerthPlumberLeads = () => {
         </div>
       </section>
 
-      {/* ─── BENEFITS ─── */}
+      {/* ─── OUTCOMES ─── */}
       <section className="py-20 md:py-28 border-t border-border">
         <div className="section-container max-w-4xl">
-          <span className="label-uppercase">What You Get</span>
+          <span className="label-uppercase">Results</span>
           <h2 className="mt-4 text-3xl md:text-4xl font-bold tracking-tighter">
-            Real outcomes. <span className="text-muted-foreground">Not just deliverables.</span>
+            What changes <span className="text-muted-foreground">after the fixes.</span>
           </h2>
           <div className="mt-12 grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            {benefits.map((b, i) => (
+            {outcomes.map((b, i) => (
               <motion.div
                 key={i}
                 initial={{ opacity: 0, y: 20 }}
@@ -235,17 +235,15 @@ const PerthPlumberLeads = () => {
         </div>
       </section>
 
-      {/* ─── MOCK METRICS ─── */}
+      {/* ─── WHAT WE MEASURE ─── */}
       <section className="py-16 bg-card border-t border-b border-border">
         <div className="section-container max-w-4xl">
-          <span className="label-uppercase">Performance Dashboard Preview</span>
-          <p className="mt-2 text-xs text-muted-foreground">Example of what your monthly reporting looks like.</p>
-          <div className="mt-8 grid grid-cols-2 lg:grid-cols-4 gap-4">
-            {mockMetrics.map((m, i) => (
-              <div key={i} className="p-5 border border-border rounded-lg">
-                <p className="text-xs text-muted-foreground uppercase tracking-wider">{m.label}</p>
-                <p className="mt-2 text-2xl md:text-3xl font-bold gold-text">{m.value}</p>
-                <p className="mt-1 text-xs text-muted-foreground">{m.trend}</p>
+          <span className="label-uppercase">What We Measure</span>
+          <p className="mt-2 text-xs text-muted-foreground">The numbers that actually matter for a plumbing business.</p>
+          <div className="mt-8 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
+            {measures.map((m, i) => (
+              <div key={i} className="p-5 border border-border rounded-lg text-center">
+                <p className="text-sm font-medium text-foreground">{m}</p>
               </div>
             ))}
           </div>
@@ -285,7 +283,7 @@ const PerthPlumberLeads = () => {
         <div className="section-container max-w-4xl">
           <span className="label-uppercase">Why Choose Us</span>
           <h2 className="mt-4 text-3xl md:text-4xl font-bold tracking-tighter">
-            Built for plumbers. <span className="text-muted-foreground">Not everyone.</span>
+            Built for Perth plumbers. <span className="text-muted-foreground">Not everyone.</span>
           </h2>
           <div className="mt-10 space-y-4">
             {whyPoints.map((p, i) => (
@@ -302,17 +300,17 @@ const PerthPlumberLeads = () => {
       <section className="py-20 md:py-28 border-t border-border">
         <div className="section-container max-w-3xl text-center">
           <h2 className="text-3xl md:text-4xl font-bold tracking-tighter">
-            Ready to stop losing jobs<br />
-            <span className="gold-text">to weaker competitors?</span>
+            Losing jobs to competitors<br />
+            <span className="gold-text">with worse skills?</span>
           </h2>
           <p className="mt-4 text-muted-foreground text-sm md:text-base max-w-lg mx-auto">
-            We'll show you exactly where your current website and lead flow are leaking jobs — and what to fix first.
+            I'll show you the 3 biggest issues likely costing you calls and quote requests. Takes 5 minutes. No cost, no obligation.
           </p>
           <button
             onClick={scrollToForm}
             className="mt-8 inline-flex items-center gap-2 px-8 py-4 bg-primary text-primary-foreground font-semibold text-xs tracking-widest uppercase hover:opacity-90 transition-opacity"
           >
-            Book Your Free Plumbing Growth Audit
+            Get a Free 5-Minute Website Teardown
             <ArrowRight className="w-4 h-4" />
           </button>
         </div>
@@ -356,11 +354,11 @@ const PerthPlumberLeads = () => {
         <div className="section-container max-w-2xl">
           <span className="label-uppercase">Get Started</span>
           <h2 className="mt-4 text-3xl md:text-4xl font-bold tracking-tighter">
-            Book Your Free<br />
-            <span className="gold-text">Plumbing Growth Audit</span>
+            Get Your Free<br />
+            <span className="gold-text">5-Minute Website Teardown</span>
           </h2>
           <p className="mt-4 text-sm text-muted-foreground max-w-lg leading-relaxed">
-            Fill in your details and we'll be in touch within one business day to schedule your audit. No cost, no obligation.
+            Fill in your details and I'll review your plumbing website and show you the biggest issues likely costing you booked jobs. No cost, no obligation.
           </p>
 
           {submitted ? (
@@ -370,66 +368,23 @@ const PerthPlumberLeads = () => {
               className="mt-10 p-8 border border-primary/30 rounded-lg text-center"
             >
               <Check className="w-8 h-8 text-primary mx-auto mb-3" />
-              <h3 className="text-lg font-semibold">Thanks — we'll be in touch shortly.</h3>
-              <p className="mt-2 text-sm text-muted-foreground">We'll review your details and reach out within one business day to book your audit.</p>
+              <h3 className="text-lg font-semibold">Thanks — I'll be in touch shortly.</h3>
+              <p className="mt-2 text-sm text-muted-foreground">I'll review your site and send through the teardown within one business day.</p>
             </motion.div>
           ) : (
             <form onSubmit={handleSubmit} className="mt-10 space-y-4">
               <div className="grid sm:grid-cols-2 gap-4">
-                <input
-                  type="text"
-                  placeholder="Your name"
-                  required
-                  value={formData.name}
-                  onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                  className="form-input-base"
-                />
-                <input
-                  type="text"
-                  placeholder="Business name"
-                  required
-                  value={formData.business}
-                  onChange={(e) => setFormData({ ...formData, business: e.target.value })}
-                  className="form-input-base"
-                />
+                <input type="text" placeholder="Your name" required value={formData.name} onChange={(e) => setFormData({ ...formData, name: e.target.value })} className="form-input-base" />
+                <input type="text" placeholder="Business name" required value={formData.business} onChange={(e) => setFormData({ ...formData, business: e.target.value })} className="form-input-base" />
               </div>
               <div className="grid sm:grid-cols-2 gap-4">
-                <input
-                  type="email"
-                  placeholder="Email address"
-                  required
-                  value={formData.email}
-                  onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                  className="form-input-base"
-                />
-                <input
-                  type="tel"
-                  placeholder="Phone number"
-                  required
-                  value={formData.phone}
-                  onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                  className="form-input-base"
-                />
+                <input type="email" placeholder="Email address" required value={formData.email} onChange={(e) => setFormData({ ...formData, email: e.target.value })} className="form-input-base" />
+                <input type="tel" placeholder="Phone number" required value={formData.phone} onChange={(e) => setFormData({ ...formData, phone: e.target.value })} className="form-input-base" />
               </div>
-              <input
-                type="url"
-                placeholder="Current website (if any)"
-                value={formData.website}
-                onChange={(e) => setFormData({ ...formData, website: e.target.value })}
-                className="form-input-base"
-              />
-              <textarea
-                placeholder="Anything else you'd like us to know?"
-                rows={3}
-                value={formData.message}
-                onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                className="form-input-base resize-none"
-              />
-              <button
-                type="submit"
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 bg-primary text-primary-foreground font-semibold text-xs tracking-widest uppercase hover:opacity-90 transition-opacity"
-              >
-                Book My Free Audit
+              <input type="url" placeholder="Your current website" value={formData.website} onChange={(e) => setFormData({ ...formData, website: e.target.value })} className="form-input-base" />
+              <textarea placeholder="Anything else you'd like me to know?" rows={3} value={formData.message} onChange={(e) => setFormData({ ...formData, message: e.target.value })} className="form-input-base resize-none" />
+              <button type="submit" className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 bg-primary text-primary-foreground font-semibold text-xs tracking-widest uppercase hover:opacity-90 transition-opacity">
+                Get My Free Teardown
                 <ArrowRight className="w-4 h-4" />
               </button>
             </form>
@@ -453,7 +408,7 @@ const PerthPlumberLeads = () => {
           onClick={scrollToForm}
           className="w-full flex items-center justify-center gap-2 px-6 py-3.5 bg-primary text-primary-foreground font-semibold text-xs tracking-widest uppercase"
         >
-          Book Free Audit
+          Free Website Teardown
           <ArrowRight className="w-4 h-4" />
         </button>
       </div>
