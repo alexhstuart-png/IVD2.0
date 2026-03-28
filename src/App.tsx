@@ -9,6 +9,7 @@ import Success from "./pages/Success.tsx";
 import NotFound from "./pages/NotFound.tsx";
 import { WorkIndex, WorkDetail } from "./pages/Work.tsx";
 import PerthPlumberLeads from "./pages/PerthPlumberLeads.tsx";
+import PrivacyPolicy from "./pages/PrivacyPolicy.tsx";
 
 const queryClient = new QueryClient();
 
