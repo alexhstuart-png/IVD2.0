@@ -8,6 +8,7 @@ import Index from "./pages/Index.tsx";
 import Success from "./pages/Success.tsx";
 import NotFound from "./pages/NotFound.tsx";
 import { WorkIndex, WorkDetail } from "./pages/Work.tsx";
+import PerthPlumberLeads from "./pages/PerthPlumberLeads.tsx";
 
 const queryClient = new QueryClient();
 
