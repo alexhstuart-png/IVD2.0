@@ -16,8 +16,11 @@ const Footer = () => {
             <a href="#why" className="text-[10px] uppercase tracking-widest text-muted-foreground hover:text-foreground transition-colors">
               About
             </a>
-            <a href="#contact" className="text-[10px] uppercase tracking-widest text-muted-foreground hover:text-foreground transition-colors">
+           <a href="#contact" className="text-[10px] uppercase tracking-widest text-muted-foreground hover:text-foreground transition-colors">
               Contact
+            </a>
+            <a href="/privacy-policy" className="text-[10px] uppercase tracking-widest text-muted-foreground hover:text-foreground transition-colors">
+              Privacy
             </a>
           </div>
         </div>
