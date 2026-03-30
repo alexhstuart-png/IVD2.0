@@ -135,7 +135,7 @@ const RapidGrowth = () => {
             </ScrollReveal>
 
             <ScrollReveal>
-              <p className="label-uppercase mb-4">// 07 Days — Rapid Growth</p>
+              <p className="label-uppercase mb-4">// 7-Day Free Trial</p>
             </ScrollReveal>
 
             <ScrollReveal>
@@ -148,13 +148,13 @@ const RapidGrowth = () => {
 
             <ScrollReveal>
               <p className="text-base md:text-lg text-secondary-foreground max-w-2xl leading-relaxed mb-4">
-                Stop sitting around hoping customers find you. In 7 days, I'll build you a campaign from scratch — targeted, sharp, and designed to put your business in front of people who are ready to buy. No fluff, no six-week "onboarding." Just a straight-up sprint to get you moving. Sometimes you just need someone to say <span className="italic text-foreground">"let's go"</span> — that's me.
+                No management fees. No contracts. No risk. For 7 days, we build and run your entire campaign from scratch — you only cover the ad spend. If it works (and it will), we keep going. If not, you walk away with zero owed.
               </p>
             </ScrollReveal>
 
             <ScrollReveal>
               <p className="text-xs text-muted-foreground max-w-xl mb-10">
-                This isn't for everyone. Limited spots. When they're gone, they're gone.
+                Limited spots. You only pay for ads — everything else is on us.
               </p>
             </ScrollReveal>
 
