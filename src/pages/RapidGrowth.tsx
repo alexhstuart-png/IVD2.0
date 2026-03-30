@@ -27,9 +27,9 @@ const RapidGrowth = () => {
   const formRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    document.title = "Exclusive Offer — Leads in 7 Days | Iron Vault Digital";
+    document.title = "Perth Landscaper Marketing — Leads in 7 Days | Iron Vault Digital";
     const meta = document.querySelector('meta[name="description"]');
-    if (meta) meta.setAttribute("content", "Exclusive rapid growth offer. Campaign live in 3 days, real leads within 7 days of launch.");
+    if (meta) meta.setAttribute("content", "We help Perth landscapers get leads fast. Campaign live in 3 days, real landscaping enquiries within 7 days of launch.");
 
     const timer = setTimeout(() => setOverlayVisible(false), 2800);
     return () => clearTimeout(timer);
@@ -135,7 +135,7 @@ const RapidGrowth = () => {
             </ScrollReveal>
 
             <ScrollReveal>
-              <p className="label-uppercase mb-4">// 07 Days — Rapid Growth</p>
+              <p className="label-uppercase mb-4">// 07 Days — Perth Landscapers</p>
             </ScrollReveal>
 
             <ScrollReveal>
@@ -148,7 +148,7 @@ const RapidGrowth = () => {
 
             <ScrollReveal>
               <p className="text-base md:text-lg text-secondary-foreground max-w-2xl leading-relaxed mb-4">
-                Stop sitting around hoping customers find you. In 7 days, I'll build you a campaign from scratch — targeted, sharp, and designed to put your business in front of people who are ready to buy. No fluff, no six-week "onboarding." Just a straight-up sprint to get you moving. Sometimes you just need someone to say <span className="italic text-foreground">"let's go"</span> — that's me.
+                Stop waiting for landscaping jobs to come to you. In 7 days, I'll build you a campaign from scratch — targeted at Perth homeowners looking for landscaping work right now. No fluff, no six-week "onboarding." Just a straight-up sprint to fill your pipeline with real enquiries. Sometimes you just need someone to say <span className="italic text-foreground">"let's go"</span> — that's me.
               </p>
             </ScrollReveal>
 

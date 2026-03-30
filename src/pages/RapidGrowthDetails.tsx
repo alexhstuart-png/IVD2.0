@@ -8,10 +8,10 @@ import Footer from "@/components/Footer";
 const ease = [0.16, 1, 0.3, 1] as const;
 
 const included = [
-  { title: "Ad Strategy", desc: "Built specifically for your business and target market — not a template." },
-  { title: "Ad Creative & Copywriting", desc: "Scroll-stopping creatives and copy written to convert your ideal customer." },
-  { title: "Lead Capture & Follow-Up", desc: "Automated sequence so no lead goes cold while you're busy." },
-  { title: "Daily Optimisation", desc: "We watch the numbers every day and adjust to improve performance." },
+  { title: "Ad Strategy", desc: "Built specifically for Perth landscapers — targeting homeowners actively searching for outdoor transformations." },
+  { title: "Ad Creative & Copywriting", desc: "Scroll-stopping before-and-after creatives and copy that sells your landscaping work." },
+  { title: "Lead Capture & Follow-Up", desc: "Automated sequence so no landscaping enquiry goes cold while you're on site." },
+  { title: "Daily Optimisation", desc: "We watch the numbers every day and adjust to bring in better quality landscaping leads." },
   { title: "7-Day Performance Report", desc: "Full transparency on what's working, what's not, and what's next." },
 ];
 
@@ -53,7 +53,7 @@ const ScrollReveal = ({ children, className = "" }: { children: React.ReactNode;
 
 const RapidGrowthDetails = () => {
   useEffect(() => {
-    document.title = "How It Works — Rapid Growth | Iron Vault Digital";
+    document.title = "How It Works — Perth Landscaper Marketing | Iron Vault Digital";
     window.scrollTo(0, 0);
   }, []);
 
@@ -83,7 +83,7 @@ const RapidGrowthDetails = () => {
             <div className="grid md:grid-cols-3 gap-6">
               {[
                 { icon: Zap, text: "Campaign built and live within 3 business days of payment." },
-                { icon: PhoneCall, text: "Real leads hitting your inbox within 7 days of launch." },
+                { icon: PhoneCall, text: "Real landscaping enquiries hitting your inbox within 7 days of launch." },
                 { icon: Lock, text: "If we don't hit results by day 7 post-launch — we keep running until we do. No extra charge." },
               ].map((item, i) => (
                 <ScrollReveal key={i}>
@@ -102,7 +102,7 @@ const RapidGrowthDetails = () => {
           <div className="section-container max-w-4xl">
             <ScrollReveal>
               <p className="label-uppercase mb-4">// What's Included</p>
-              <h2 className="text-2xl md:text-3xl font-bold tracking-tight mb-10">Everything you need to start generating leads — fast.</h2>
+              <h2 className="text-2xl md:text-3xl font-bold tracking-tight mb-10">Everything you need to start booking landscaping jobs — fast.</h2>
             </ScrollReveal>
 
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -175,7 +175,7 @@ const RapidGrowthDetails = () => {
                 <div className="border border-primary/50 p-8 h-full" style={{ background: "linear-gradient(135deg, hsl(42 55% 55% / 0.06), transparent)" }}>
                   <p className="label-uppercase gold-text mb-3">Ready to keep going?</p>
                   <p className="text-sm text-secondary-foreground leading-relaxed mb-4">
-                    Most clients see the results and want to keep the momentum rolling. We'll lock you in on a 3-month minimum plan — enough time to turn early leads into a real pipeline.
+                    Most landscapers see the results and want to keep the momentum rolling. We'll lock you in on a 3-month minimum plan — enough time to turn early leads into a full pipeline of booked jobs.
                   </p>
                   <p className="text-xs text-muted-foreground">After 3 months, continue month-to-month or upgrade your plan.</p>
                 </div>
