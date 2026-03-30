@@ -135,7 +135,7 @@ const RapidGrowth = () => {
             </ScrollReveal>
 
             <ScrollReveal>
-              <p className="label-uppercase mb-4">// 07 Days — Rapid Growth</p>
+              <p className="label-uppercase mb-4">// 07 Days — Perth Landscapers</p>
             </ScrollReveal>
 
             <ScrollReveal>
