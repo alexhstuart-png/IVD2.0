@@ -53,7 +53,7 @@ const ScrollReveal = ({ children, className = "" }: { children: React.ReactNode;
 
 const RapidGrowthDetails = () => {
   useEffect(() => {
-    document.title = "How It Works — Rapid Growth | Iron Vault Digital";
+    document.title = "How It Works — Perth Landscaper Marketing | Iron Vault Digital";
     window.scrollTo(0, 0);
   }, []);
 
