@@ -10,6 +10,7 @@ import NotFound from "./pages/NotFound.tsx";
 import { WorkIndex, WorkDetail } from "./pages/Work.tsx";
 import PerthPlumberLeads from "./pages/PerthPlumberLeads.tsx";
 import PrivacyPolicy from "./pages/PrivacyPolicy.tsx";
+import RapidGrowth from "./pages/RapidGrowth.tsx";
 
 const queryClient = new QueryClient();
 
@@ -26,6 +27,7 @@ const App = () => (
             <Route path="/work/:slug" element={<WorkDetail />} />
             <Route path="/perth-plumber-leads" element={<PerthPlumberLeads />} />
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+            <Route path="/rapid-growth" element={<RapidGrowth />} />
             <Route path="/success" element={<Success />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
