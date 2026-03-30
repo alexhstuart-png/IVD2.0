@@ -8,10 +8,10 @@ import Footer from "@/components/Footer";
 const ease = [0.16, 1, 0.3, 1] as const;
 
 const included = [
-  { title: "Ad Strategy", desc: "Built specifically for your business and target market — not a template." },
-  { title: "Ad Creative & Copywriting", desc: "Scroll-stopping creatives and copy written to convert your ideal customer." },
-  { title: "Lead Capture & Follow-Up", desc: "Automated sequence so no lead goes cold while you're busy." },
-  { title: "Daily Optimisation", desc: "We watch the numbers every day and adjust to improve performance." },
+  { title: "Ad Strategy", desc: "Built specifically for Perth landscapers — targeting homeowners actively searching for outdoor transformations." },
+  { title: "Ad Creative & Copywriting", desc: "Scroll-stopping before-and-after creatives and copy that sells your landscaping work." },
+  { title: "Lead Capture & Follow-Up", desc: "Automated sequence so no landscaping enquiry goes cold while you're on site." },
+  { title: "Daily Optimisation", desc: "We watch the numbers every day and adjust to bring in better quality landscaping leads." },
   { title: "7-Day Performance Report", desc: "Full transparency on what's working, what's not, and what's next." },
 ];
 
