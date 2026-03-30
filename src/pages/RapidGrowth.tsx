@@ -27,9 +27,9 @@ const RapidGrowth = () => {
   const formRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    document.title = "Exclusive Offer — Leads in 7 Days | Iron Vault Digital";
+    document.title = "Perth Landscaper Marketing — Leads in 7 Days | Iron Vault Digital";
     const meta = document.querySelector('meta[name="description"]');
-    if (meta) meta.setAttribute("content", "Exclusive rapid growth offer. Campaign live in 3 days, real leads within 7 days of launch.");
+    if (meta) meta.setAttribute("content", "We help Perth landscapers get leads fast. Campaign live in 3 days, real landscaping enquiries within 7 days of launch.");
 
     const timer = setTimeout(() => setOverlayVisible(false), 2800);
     return () => clearTimeout(timer);
