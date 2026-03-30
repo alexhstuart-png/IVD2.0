@@ -203,11 +203,11 @@ const RapidGrowth = () => {
         <section className="py-20 border-t border-border" ref={formRef} id="contact">
           <div className="section-container max-w-xl">
             <ScrollReveal>
-              <p className="label-uppercase mb-4">// Get Started</p>
+               <p className="label-uppercase mb-4">// Start Your Free Trial</p>
               <p className="text-xs text-muted-foreground mb-6">
-                Spots are limited. If you've been sent this link, we already think you're a good fit.
+                No fees, no lock-in. You only pay for ad spend — we handle the rest.
               </p>
-              <h2 className="text-2xl md:text-3xl font-bold tracking-tight mb-8">Lock In Your 7 Days</h2>
+              <h2 className="text-2xl md:text-3xl font-bold tracking-tight mb-8">Claim Your 7-Day Free Trial</h2>
             </ScrollReveal>
 
             {submitted ? (
