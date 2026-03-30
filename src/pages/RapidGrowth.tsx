@@ -27,7 +27,7 @@ const RapidGrowth = () => {
   const formRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    document.title = "Exclusive Offer — Leads in 7 Days | Iron Vault Digital";
+    document.title = "7-Day Free Trial — Leads in 7 Days | Iron Vault Digital";
     const meta = document.querySelector('meta[name="description"]');
     if (meta) meta.setAttribute("content", "Exclusive rapid growth offer. Campaign live in 3 days, real leads within 7 days of launch.");
 
