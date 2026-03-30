@@ -10,6 +10,7 @@ import NotFound from "./pages/NotFound.tsx";
 import { WorkIndex, WorkDetail } from "./pages/Work.tsx";
 import PerthPlumberLeads from "./pages/PerthPlumberLeads.tsx";
 import PrivacyPolicy from "./pages/PrivacyPolicy.tsx";
+import RapidGrowth from "./pages/RapidGrowth.tsx";
 
 const queryClient = new QueryClient();
 
