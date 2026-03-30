@@ -175,7 +175,7 @@ const RapidGrowthDetails = () => {
                 <div className="border border-primary/50 p-8 h-full" style={{ background: "linear-gradient(135deg, hsl(42 55% 55% / 0.06), transparent)" }}>
                   <p className="label-uppercase gold-text mb-3">Ready to keep going?</p>
                   <p className="text-sm text-secondary-foreground leading-relaxed mb-4">
-                    Most clients see the results and want to keep the momentum rolling. We'll lock you in on a 3-month minimum plan — enough time to turn early leads into a real pipeline.
+                    Most landscapers see the results and want to keep the momentum rolling. We'll lock you in on a 3-month minimum plan — enough time to turn early leads into a full pipeline of booked jobs.
                   </p>
                   <p className="text-xs text-muted-foreground">After 3 months, continue month-to-month or upgrade your plan.</p>
                 </div>

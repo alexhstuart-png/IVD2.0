@@ -148,7 +148,7 @@ const RapidGrowth = () => {
 
             <ScrollReveal>
               <p className="text-base md:text-lg text-secondary-foreground max-w-2xl leading-relaxed mb-4">
-                Stop sitting around hoping customers find you. In 7 days, I'll build you a campaign from scratch — targeted, sharp, and designed to put your business in front of people who are ready to buy. No fluff, no six-week "onboarding." Just a straight-up sprint to get you moving. Sometimes you just need someone to say <span className="italic text-foreground">"let's go"</span> — that's me.
+                Stop waiting for landscaping jobs to come to you. In 7 days, I'll build you a campaign from scratch — targeted at Perth homeowners looking for landscaping work right now. No fluff, no six-week "onboarding." Just a straight-up sprint to fill your pipeline with real enquiries. Sometimes you just need someone to say <span className="italic text-foreground">"let's go"</span> — that's me.
               </p>
             </ScrollReveal>
 
