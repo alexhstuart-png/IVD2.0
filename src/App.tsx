@@ -11,6 +11,7 @@ import { WorkIndex, WorkDetail } from "./pages/Work.tsx";
 import PerthPlumberLeads from "./pages/PerthPlumberLeads.tsx";
 import PrivacyPolicy from "./pages/PrivacyPolicy.tsx";
 import RapidGrowth from "./pages/RapidGrowth.tsx";
+import RapidGrowthDetails from "./pages/RapidGrowthDetails.tsx";
 
 const queryClient = new QueryClient();
 
