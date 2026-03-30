@@ -102,7 +102,7 @@ const RapidGrowthDetails = () => {
           <div className="section-container max-w-4xl">
             <ScrollReveal>
               <p className="label-uppercase mb-4">// What's Included</p>
-              <h2 className="text-2xl md:text-3xl font-bold tracking-tight mb-10">Everything you need to start generating leads — fast.</h2>
+              <h2 className="text-2xl md:text-3xl font-bold tracking-tight mb-10">Everything you need to start booking landscaping jobs — fast.</h2>
             </ScrollReveal>
 
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
