@@ -53,7 +53,7 @@ const ScrollReveal = ({ children, className = "" }: { children: React.ReactNode;
 
 const RapidGrowthDetails = () => {
   useEffect(() => {
-    document.title = "How It Works — Rapid Growth | Iron Vault Digital";
+    document.title = "How It Works — 7-Day Free Trial | Iron Vault Digital";
     window.scrollTo(0, 0);
   }, []);
 
@@ -122,12 +122,12 @@ const RapidGrowthDetails = () => {
         <section className="py-20 border-b border-border">
           <div className="section-container max-w-4xl text-center">
             <ScrollReveal>
-              <p className="label-uppercase mb-4">// Pricing</p>
-              <p className="text-xs text-muted-foreground mb-6">This rate is only available through direct invitation.</p>
+              <p className="label-uppercase mb-4">// Your 7-Day Free Trial</p>
+              <p className="text-xs text-muted-foreground mb-6">No management fees. You only pay for ad spend.</p>
 
-              <div className="text-6xl md:text-8xl font-bold gold-text tracking-tight mb-3">$1,500</div>
-              <p className="text-sm text-secondary-foreground mb-2">One flat payment. Covers ad spend and management. No surprises.</p>
-              <p className="text-xs text-muted-foreground mb-12">Ad spend is included in the $1,500. Nothing extra to pay to get started.</p>
+              <div className="text-6xl md:text-8xl font-bold gold-text tracking-tight mb-3">$0</div>
+              <p className="text-sm text-secondary-foreground mb-2">Management fee for the first 7 days. Zero. You only cover your ad budget.</p>
+              <p className="text-xs text-muted-foreground mb-12">We build, launch, and manage everything — all you pay for is the ads themselves.</p>
             </ScrollReveal>
 
             {/* Timeline */}

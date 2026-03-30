@@ -27,7 +27,7 @@ const RapidGrowth = () => {
   const formRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    document.title = "Exclusive Offer — Leads in 7 Days | Iron Vault Digital";
+    document.title = "7-Day Free Trial — Leads in 7 Days | Iron Vault Digital";
     const meta = document.querySelector('meta[name="description"]');
     if (meta) meta.setAttribute("content", "Exclusive rapid growth offer. Campaign live in 3 days, real leads within 7 days of launch.");
 
@@ -130,12 +130,12 @@ const RapidGrowth = () => {
           <div className="section-container max-w-4xl">
             <ScrollReveal>
               <span className="inline-block border border-primary/40 text-primary text-[10px] tracking-[0.2em] font-mono px-3 py-1 mb-6 rounded-full">
-                // Exclusive Offer — Limited Availability
+                // 7-Day Free Trial — Limited Spots
               </span>
             </ScrollReveal>
 
             <ScrollReveal>
-              <p className="label-uppercase mb-4">// 07 Days — Rapid Growth</p>
+              <p className="label-uppercase mb-4">// 7-Day Free Trial</p>
             </ScrollReveal>
 
             <ScrollReveal>
@@ -148,13 +148,13 @@ const RapidGrowth = () => {
 
             <ScrollReveal>
               <p className="text-base md:text-lg text-secondary-foreground max-w-2xl leading-relaxed mb-4">
-                Stop sitting around hoping customers find you. In 7 days, I'll build you a campaign from scratch — targeted, sharp, and designed to put your business in front of people who are ready to buy. No fluff, no six-week "onboarding." Just a straight-up sprint to get you moving. Sometimes you just need someone to say <span className="italic text-foreground">"let's go"</span> — that's me.
+                No management fees. No contracts. No risk. For 7 days, we build and run your entire campaign from scratch — you only cover the ad spend. If it works (and it will), we keep going. If not, you walk away with zero owed.
               </p>
             </ScrollReveal>
 
             <ScrollReveal>
               <p className="text-xs text-muted-foreground max-w-xl mb-10">
-                This isn't for everyone. Limited spots. When they're gone, they're gone.
+                Limited spots. You only pay for ads — everything else is on us.
               </p>
             </ScrollReveal>
 
@@ -203,11 +203,11 @@ const RapidGrowth = () => {
         <section className="py-20 border-t border-border" ref={formRef} id="contact">
           <div className="section-container max-w-xl">
             <ScrollReveal>
-              <p className="label-uppercase mb-4">// Get Started</p>
+               <p className="label-uppercase mb-4">// Start Your Free Trial</p>
               <p className="text-xs text-muted-foreground mb-6">
-                Spots are limited. If you've been sent this link, we already think you're a good fit.
+                No fees, no lock-in. You only pay for ad spend — we handle the rest.
               </p>
-              <h2 className="text-2xl md:text-3xl font-bold tracking-tight mb-8">Lock In Your 7 Days</h2>
+              <h2 className="text-2xl md:text-3xl font-bold tracking-tight mb-8">Claim Your 7-Day Free Trial</h2>
             </ScrollReveal>
 
             {submitted ? (
