@@ -130,7 +130,7 @@ const RapidGrowth = () => {
           <div className="section-container max-w-4xl">
             <ScrollReveal>
               <span className="inline-block border border-primary/40 text-primary text-[10px] tracking-[0.2em] font-mono px-3 py-1 mb-6 rounded-full">
-                // Exclusive Offer — Limited Availability
+                // 7-Day Free Trial — Limited Spots
               </span>
             </ScrollReveal>
 
