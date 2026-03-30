@@ -29,6 +29,7 @@ const App = () => (
             <Route path="/perth-plumber-leads" element={<PerthPlumberLeads />} />
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />
             <Route path="/rapid-growth" element={<RapidGrowth />} />
+            <Route path="/rapid-growth/details" element={<RapidGrowthDetails />} />
             <Route path="/success" element={<Success />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
