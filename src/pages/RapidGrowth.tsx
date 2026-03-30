@@ -20,7 +20,7 @@ const tiers = [
     name: "Launch",
     price: "$700",
     period: "/month",
-    features: ["Meta Ads management", "Ad creatives & copy", "SMS/email follow-up sequence"],
+    features: ["Meta Ads management", "Ad creatives & copy", "SMS/email follow-up sequence", "Basic data collection & reporting"],
     highlight: false,
   },
   {
