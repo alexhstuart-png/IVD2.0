@@ -20,14 +20,14 @@ const tiers = [
     name: "Launch",
     price: "$700",
     period: "/month",
-    features: ["Meta Ads management", "Ad creatives & copy", "SMS/email follow-up sequence"],
+    features: ["Meta Ads management", "Ad creatives & copy", "SMS/email follow-up sequence", "Basic data collection & reporting"],
     highlight: false,
   },
   {
     name: "Scale",
     price: "$1,500",
     period: "/month",
-    features: ["Everything in Launch", "Google Ads", "Retargeting campaigns", "Custom landing page", "Lead nurture sequence", "Google Business Profile optimisation", "Review generation system"],
+    features: ["Everything in Launch", "Advanced ad management, chosen to best optimise returns", "Retargeting campaigns", "Custom landing page", "Lead nurture sequence", "Google Business Profile optimisation", "Review generation system", "Advanced data collection & reporting"],
     highlight: true,
   },
   {
