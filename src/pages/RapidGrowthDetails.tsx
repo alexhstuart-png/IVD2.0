@@ -83,7 +83,7 @@ const RapidGrowthDetails = () => {
             <div className="grid md:grid-cols-3 gap-6">
               {[
                 { icon: Zap, text: "Campaign built and live within 3 business days of payment." },
-                { icon: PhoneCall, text: "Real leads hitting your inbox within 7 days of launch." },
+                { icon: PhoneCall, text: "Real landscaping enquiries hitting your inbox within 7 days of launch." },
                 { icon: Lock, text: "If we don't hit results by day 7 post-launch — we keep running until we do. No extra charge." },
               ].map((item, i) => (
                 <ScrollReveal key={i}>
