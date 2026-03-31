@@ -99,7 +99,7 @@ export const WEBSITE_FLOW: ConversationFlow = {
   },
   end_scale: {
     botMessage:
-      "Smart move! Our Scale package ($3,499) includes the full website plus SEO setup, blog, and more pages so you start ranking on Google from day one.\n\n" + BOOKING_CTA,
+      "Smart move! We've got a package that includes the full website plus SEO setup, blog, and more pages so you start ranking on Google from day one.\n\n" + BOOKING_CTA,
   },
   end_dominate: {
     botMessage:
