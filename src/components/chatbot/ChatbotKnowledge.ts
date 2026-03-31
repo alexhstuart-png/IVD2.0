@@ -153,7 +153,7 @@ export const LEADS_FLOW: ConversationFlow = {
   },
   end_scale: {
     botMessage:
-      "When you're ready to scale, you want both Google and Meta working together. Our Tier 2 Scale retainer ($1,500/mo) covers both platforms plus landing pages and reporting.\n\n" + BOOKING_CTA,
+      "When you're ready to scale, you want both Google and Meta working together. We've got a package that covers both platforms plus landing pages and reporting.\n\n" + BOOKING_CTA,
   },
   end_urgent: {
     botMessage:
