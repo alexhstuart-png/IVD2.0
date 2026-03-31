@@ -16,7 +16,7 @@ export const QUICK_REPLIES = [
   { label: "🕵️ I'm a competitor", intent: "competitor" },
 ] as const;
 
-const BOOKING_CTA = "I'd suggest booking a free 15-min call with Alex — no pitch, just honest advice 👉 [Book a Call](/#contact)";
+const BOOKING_CTA = "I'd suggest getting in touch so we can chat about what'll work best for you 👉 [Get in Touch](/#contact)";
 
 // --- Conversational flows for website & leads ---
 
