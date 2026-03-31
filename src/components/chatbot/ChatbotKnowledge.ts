@@ -202,7 +202,7 @@ const INTENTS: Intent[] = [
     id: "pricing_general",
     patterns: ["price", "pricing", "cost", "how much", "budget", "rate", "quote", "all up", "total cost", "investment"],
     response:
-      "Depends on what you need! Websites start at $1,999. Ad management retainers start at $700/mo plus your ad spend on top — paid directly to Google or Meta, not us. We recommend around $30/day as a starting point but it really depends on your situation.\n\nHappy to give you a more specific number on a quick call: " + BOOKING_LINK,
+      "Depends on what you need! Websites start at $1,999. Ad management retainers start at $700/mo plus your ad spend on top — paid directly to Google or Meta, not us. We recommend around $30/day as a starting point but it really depends on your situation.\n\n" + BOOKING_CTA,
   },
   {
     id: "ads",
