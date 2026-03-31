@@ -9,6 +9,7 @@ import {
   FALLBACK_WITH_FORM,
   WEBSITE_FLOW,
   LEADS_FLOW,
+  COMPETITOR_FLOW,
   type ConversationFlow,
 } from "./ChatbotKnowledge";
 
@@ -82,6 +83,8 @@ const ChatbotWidget = () => {
       startFlow(WEBSITE_FLOW);
     } else if (intentId === "leads") {
       startFlow(LEADS_FLOW);
+    } else if (intentId === "competitor") {
+      startFlow(COMPETITOR_FLOW);
     } else {
       const answer = matchIntent(intentId);
       setMessages((m) => [...m, { role: "bot", text: answer || FALLBACK_RESPONSE }]);
