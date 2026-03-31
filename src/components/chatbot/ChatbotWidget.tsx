@@ -7,12 +7,20 @@ import {
   matchIntent,
   FALLBACK_RESPONSE,
   FALLBACK_WITH_FORM,
+  WEBSITE_FLOW,
+  LEADS_FLOW,
+  type ConversationFlow,
 } from "./ChatbotKnowledge";
 
 type Message = {
   role: "bot" | "user";
   text: string;
 };
+
+type ActiveFlow = {
+  flow: ConversationFlow;
+  step: string;
+} | null;
 
 const ChatbotWidget = () => {
   const [open, setOpen] = useState(false);
@@ -21,12 +29,12 @@ const ChatbotWidget = () => {
   ]);
   const [input, setInput] = useState("");
   const [showButtons, setShowButtons] = useState(true);
+  const [activeFlow, setActiveFlow] = useState<ActiveFlow>(null);
   const [showForm, setShowForm] = useState(false);
   const [formSent, setFormSent] = useState(false);
   const scrollRef = useRef<HTMLDivElement>(null);
   const missCount = useRef(0);
 
-  // Auto-open after 3 seconds
   useEffect(() => {
     const timer = setTimeout(() => setOpen(true), 3000);
     return () => clearTimeout(timer);
@@ -37,43 +45,88 @@ const ChatbotWidget = () => {
       top: scrollRef.current.scrollHeight,
       behavior: "smooth",
     });
-  }, [messages, showForm, showButtons]);
+  }, [messages, showForm, showButtons, activeFlow]);
+
+  const startFlow = (flow: ConversationFlow) => {
+    const step = flow["start"];
+    setActiveFlow({ flow, step: "start" });
+    setMessages((m) => [...m, { role: "bot", text: step.botMessage }]);
+  };
+
+  const handleFlowOption = (label: string, nextStep: string) => {
+    if (!activeFlow) return;
+    const next = activeFlow.flow[nextStep];
+    if (!next) return;
+
+    setMessages((m) => [...m, { role: "user", text: label }]);
+
+    if (next.options) {
+      setActiveFlow({ ...activeFlow, step: nextStep });
+      setTimeout(() => {
+        setMessages((m) => [...m, { role: "bot", text: next.botMessage }]);
+      }, 400);
+    } else {
+      // End of flow
+      setActiveFlow(null);
+      setTimeout(() => {
+        setMessages((m) => [...m, { role: "bot", text: next.botMessage }]);
+      }, 400);
+    }
+  };
 
   const handleButtonClick = (label: string, intentId: string) => {
     setShowButtons(false);
-    const answer = matchIntent(intentId);
-    setMessages((m) => [
-      ...m,
-      { role: "user", text: label },
-      { role: "bot", text: answer || FALLBACK_RESPONSE },
-    ]);
+    setMessages((m) => [...m, { role: "user", text: label }]);
+
+    if (intentId === "website") {
+      startFlow(WEBSITE_FLOW);
+    } else if (intentId === "leads") {
+      startFlow(LEADS_FLOW);
+    } else {
+      const answer = matchIntent(intentId);
+      setMessages((m) => [...m, { role: "bot", text: answer || FALLBACK_RESPONSE }]);
+    }
   };
 
   const send = () => {
     const trimmed = input.trim();
     if (!trimmed) return;
     setShowButtons(false);
+    setActiveFlow(null);
     const userMsg: Message = { role: "user", text: trimmed };
-    const answer = matchIntent(trimmed);
 
+    // Check for website/leads keywords to start flows
+    const lower = trimmed.toLowerCase();
+    if (
+      !activeFlow &&
+      (lower.includes("website") || lower.includes("site") || lower.includes("web design") || lower.includes("redesign"))
+    ) {
+      setMessages((m) => [...m, userMsg]);
+      startFlow(WEBSITE_FLOW);
+      setInput("");
+      return;
+    }
+    if (
+      !activeFlow &&
+      (lower.includes("more leads") || lower.includes("lead gen") || lower.includes("more jobs") || lower.includes("more work") || lower.includes("grow my business"))
+    ) {
+      setMessages((m) => [...m, userMsg]);
+      startFlow(LEADS_FLOW);
+      setInput("");
+      return;
+    }
+
+    const answer = matchIntent(trimmed);
     if (answer) {
       missCount.current = 0;
       setMessages((m) => [...m, userMsg, { role: "bot", text: answer }]);
     } else {
       missCount.current += 1;
       if (missCount.current >= 2) {
-        setMessages((m) => [
-          ...m,
-          userMsg,
-          { role: "bot", text: FALLBACK_WITH_FORM },
-        ]);
+        setMessages((m) => [...m, userMsg, { role: "bot", text: FALLBACK_WITH_FORM }]);
         setTimeout(() => setShowForm(true), 600);
       } else {
-        setMessages((m) => [
-          ...m,
-          userMsg,
-          { role: "bot", text: FALLBACK_RESPONSE },
-        ]);
+        setMessages((m) => [...m, userMsg, { role: "bot", text: FALLBACK_RESPONSE }]);
       }
     }
     setInput("");
@@ -85,36 +138,30 @@ const ChatbotWidget = () => {
     fetch("/", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: new URLSearchParams(
-        formData as unknown as Record<string, string>
-      ).toString(),
+      body: new URLSearchParams(formData as unknown as Record<string, string>).toString(),
     })
       .then(() => {
         setFormSent(true);
         setMessages((m) => [
           ...m,
-          {
-            role: "bot",
-            text: "Thanks! Alex will be in touch soon. In the meantime, feel free to ask me anything else. 👊",
-          },
+          { role: "bot", text: "Thanks! Alex will be in touch soon. Feel free to ask me anything else. 👊" },
         ]);
         setTimeout(() => setShowForm(false), 100);
       })
       .catch(() => {
         setMessages((m) => [
           ...m,
-          {
-            role: "bot",
-            text: "Something went wrong — try the contact form on the page instead, or email alex@ironvaultdigital.com.au directly.",
-          },
+          { role: "bot", text: "Something went wrong — try the contact form on the page instead, or email alex@ironvaultdigital.com.au directly." },
         ]);
         setShowForm(false);
       });
   };
 
+  // Get current flow step options
+  const currentFlowOptions = activeFlow?.flow[activeFlow.step]?.options ?? null;
+
   return (
     <>
-      {/* Hidden Netlify form */}
       <form name="chatbot-lead" data-netlify="true" hidden>
         <input type="hidden" name="form-name" value="chatbot-lead" />
         <input name="name" />
@@ -123,7 +170,6 @@ const ChatbotWidget = () => {
         <textarea name="message" />
       </form>
 
-      {/* FAB */}
       <AnimatePresence>
         {!open && (
           <motion.button
@@ -139,7 +185,6 @@ const ChatbotWidget = () => {
         )}
       </AnimatePresence>
 
-      {/* Chat window */}
       <AnimatePresence>
         {open && (
           <motion.div
@@ -154,9 +199,7 @@ const ChatbotWidget = () => {
             <div className="flex items-center justify-between px-4 py-3 border-b border-border bg-surface-elevated">
               <div className="flex items-center gap-2">
                 <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
-                <span className="text-sm font-semibold text-foreground">
-                  Iron Vault Assistant
-                </span>
+                <span className="text-sm font-semibold text-foreground">Iron Vault Assistant</span>
               </div>
               <button
                 onClick={() => setOpen(false)}
@@ -170,12 +213,7 @@ const ChatbotWidget = () => {
             {/* Messages */}
             <div ref={scrollRef} className="flex-1 overflow-y-auto p-4 space-y-3">
               {messages.map((m, i) => (
-                <div
-                  key={i}
-                  className={`flex ${
-                    m.role === "user" ? "justify-end" : "justify-start"
-                  }`}
-                >
+                <div key={i} className={`flex ${m.role === "user" ? "justify-end" : "justify-start"}`}>
                   <div
                     className={`max-w-[80%] px-3.5 py-2.5 rounded-2xl text-sm leading-relaxed whitespace-pre-line ${
                       m.role === "user"
@@ -188,9 +226,9 @@ const ChatbotWidget = () => {
                 </div>
               ))}
 
-              {/* Quick reply buttons */}
+              {/* Initial quick reply buttons */}
               <AnimatePresence>
-                {showButtons && (
+                {showButtons && !activeFlow && (
                   <motion.div
                     initial={{ opacity: 0, y: 8 }}
                     animate={{ opacity: 1, y: 0 }}
@@ -210,6 +248,28 @@ const ChatbotWidget = () => {
                 )}
               </AnimatePresence>
 
+              {/* Flow step buttons */}
+              <AnimatePresence>
+                {currentFlowOptions && (
+                  <motion.div
+                    initial={{ opacity: 0, y: 8 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, height: 0 }}
+                    className="flex flex-col gap-2 pt-1"
+                  >
+                    {currentFlowOptions.map((opt) => (
+                      <button
+                        key={opt.nextStep}
+                        onClick={() => handleFlowOption(opt.label, opt.nextStep)}
+                        className="w-full text-left px-3.5 py-2.5 rounded-xl border border-border bg-background text-sm text-foreground hover:border-primary hover:bg-primary/5 transition-colors"
+                      >
+                        {opt.label}
+                      </button>
+                    ))}
+                  </motion.div>
+                )}
+              </AnimatePresence>
+
               {/* Inline lead form */}
               <AnimatePresence>
                 {showForm && !formSent && (
@@ -223,48 +283,16 @@ const ChatbotWidget = () => {
                       onSubmit={handleFormSubmit}
                       className="bg-secondary rounded-xl p-4 space-y-3 border border-border"
                     >
-                      <input
-                        type="hidden"
-                        name="form-name"
-                        value="chatbot-lead"
-                      />
-                      <input
-                        name="name"
-                        required
-                        placeholder="Your name"
-                        className="w-full px-3 py-2.5 bg-background border border-border rounded-lg text-sm text-foreground placeholder:text-muted-foreground outline-none focus:border-primary transition-colors"
-                      />
-                      <input
-                        name="email"
-                        type="email"
-                        required
-                        placeholder="Email address"
-                        className="w-full px-3 py-2.5 bg-background border border-border rounded-lg text-sm text-foreground placeholder:text-muted-foreground outline-none focus:border-primary transition-colors"
-                      />
-                      <input
-                        name="phone"
-                        type="tel"
-                        placeholder="Phone (optional)"
-                        className="w-full px-3 py-2.5 bg-background border border-border rounded-lg text-sm text-foreground placeholder:text-muted-foreground outline-none focus:border-primary transition-colors"
-                      />
-                      <textarea
-                        name="message"
-                        rows={2}
-                        placeholder="What do you need help with?"
-                        className="w-full px-3 py-2.5 bg-background border border-border rounded-lg text-sm text-foreground placeholder:text-muted-foreground outline-none focus:border-primary transition-colors resize-none"
-                      />
+                      <input type="hidden" name="form-name" value="chatbot-lead" />
+                      <input name="name" required placeholder="Your name" className="w-full px-3 py-2.5 bg-background border border-border rounded-lg text-sm text-foreground placeholder:text-muted-foreground outline-none focus:border-primary transition-colors" />
+                      <input name="email" type="email" required placeholder="Email address" className="w-full px-3 py-2.5 bg-background border border-border rounded-lg text-sm text-foreground placeholder:text-muted-foreground outline-none focus:border-primary transition-colors" />
+                      <input name="phone" type="tel" placeholder="Phone (optional)" className="w-full px-3 py-2.5 bg-background border border-border rounded-lg text-sm text-foreground placeholder:text-muted-foreground outline-none focus:border-primary transition-colors" />
+                      <textarea name="message" rows={2} placeholder="What do you need help with?" className="w-full px-3 py-2.5 bg-background border border-border rounded-lg text-sm text-foreground placeholder:text-muted-foreground outline-none focus:border-primary transition-colors resize-none" />
                       <div className="flex gap-2">
-                        <button
-                          type="button"
-                          onClick={() => setShowForm(false)}
-                          className="flex items-center gap-1 px-3 py-2 text-xs text-muted-foreground hover:text-foreground transition-colors"
-                        >
+                        <button type="button" onClick={() => setShowForm(false)} className="flex items-center gap-1 px-3 py-2 text-xs text-muted-foreground hover:text-foreground transition-colors">
                           <ArrowLeft size={14} /> Back
                         </button>
-                        <button
-                          type="submit"
-                          className="flex-1 py-2.5 bg-primary text-primary-foreground text-xs font-bold uppercase tracking-widest rounded-lg hover:opacity-90 transition-opacity"
-                        >
+                        <button type="submit" className="flex-1 py-2.5 bg-primary text-primary-foreground text-xs font-bold uppercase tracking-widest rounded-lg hover:opacity-90 transition-opacity">
                           Send
                         </button>
                       </div>
