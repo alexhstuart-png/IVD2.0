@@ -328,7 +328,7 @@ const INTENTS: Intent[] = [
   {
     id: "hosting",
     patterns: ["hosting", "maintain", "support", "ongoing", "care plan", "updates", "security"],
-    response: "Yep — we offer a $200/mo care plan that covers hosting, updates, and security. Set and forget.",
+    response: "Yep — we offer a care plan that covers hosting, updates, and security. Set and forget.\n\n" + BOOKING_CTA,
   },
   {
     id: "case_study",
