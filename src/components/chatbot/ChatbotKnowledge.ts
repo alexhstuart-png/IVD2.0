@@ -16,7 +16,7 @@ export const QUICK_REPLIES = [
   { label: "🕵️ I'm a competitor", intent: "competitor" },
 ] as const;
 
-const BOOKING_LINK = "https://calendar.app.google/UchY2WA1N45roorh9";
+const BOOKING_CTA = "I'd suggest booking a free 15-min call with Alex — no pitch, just honest advice 👉 [Book a Call](/#contact)";
 
 // --- Conversational flows for website & leads ---
 
@@ -83,27 +83,27 @@ export const WEBSITE_FLOW: ConversationFlow = {
   },
   end_redesign: {
     botMessage:
-      "A refresh can make a huge difference. Our Launch package ($1,999) covers a full redesign — mobile optimised, fast, with proper contact forms. If you want SEO baked in too, Scale ($3,499) is the go.\n\nWant to have a quick yarn about what'd suit you best? Alex does free 15-min calls — zero pitch, just honest advice: " + BOOKING_LINK,
+      "A refresh can make a huge difference. Our Launch package ($1,999) covers a full redesign — mobile optimised, fast, with proper contact forms. If you want SEO baked in too, Scale ($3,499) is the go.\n\n" + BOOKING_CTA,
   },
   end_conversions: {
     botMessage:
-      "That's super common — usually it's a mix of layout, messaging, and calls-to-action. We build sites specifically to convert visitors into enquiries.\n\nOur Scale package ($3,499) includes conversion-focused design plus SEO so you're getting traffic too.\n\nHappy to take a look at your current site and give you honest feedback — book a free 15-min call: " + BOOKING_LINK,
+      "That's super common — usually it's a mix of layout, messaging, and calls-to-action. We build sites specifically to convert visitors into enquiries.\n\nOur Scale package ($3,499) includes conversion-focused design plus SEO so you're getting traffic too.\n\n" + BOOKING_CTA,
   },
   end_seo: {
     botMessage:
-      "SEO is a game-changer for tradies. Our Scale package ($3,499) includes proper SEO setup — technical fixes, local SEO, and content strategy.\n\nWant Alex to take a quick look at where you're sitting on Google? Free 15-min call, no strings: " + BOOKING_LINK,
+      "SEO is a game-changer for tradies. Our Scale package ($3,499) includes proper SEO setup — technical fixes, local SEO, and content strategy.\n\n" + BOOKING_CTA,
   },
   end_launch: {
     botMessage:
-      "Our Launch package ($1,999) is perfect for that — professional site, mobile optimised, contact forms, and Google-ready. Usually done in 2-3 weeks.\n\nWant to chat about it? Alex does free 15-min calls — just straight advice: " + BOOKING_LINK,
+      "Our Launch package ($1,999) is perfect for that — professional site, mobile optimised, contact forms, and Google-ready. Usually done in 2-3 weeks.\n\n" + BOOKING_CTA,
   },
   end_scale: {
     botMessage:
-      "Smart move! Our Scale package ($3,499) includes the full website plus SEO setup, blog, and more pages so you start ranking on Google from day one.\n\nWant to talk through it? Free 15-min call with Alex — no pitch: " + BOOKING_LINK,
+      "Smart move! Our Scale package ($3,499) includes the full website plus SEO setup, blog, and more pages so you start ranking on Google from day one.\n\n" + BOOKING_CTA,
   },
   end_dominate: {
     botMessage:
-      "Love the ambition! Our Dominate package ($6,500+) is the full custom build — advanced SEO, integrations, the lot. 4-6 week turnaround.\n\nBest to chat through the details — Alex does free 15-min calls: " + BOOKING_LINK,
+      "Love the ambition! Our Dominate package ($6,500+) is the full custom build — advanced SEO, integrations, the lot. 4-6 week turnaround.\n\n" + BOOKING_CTA,
   },
 };
 
@@ -149,39 +149,39 @@ export const LEADS_FLOW: ConversationFlow = {
   },
   end_consistent: {
     botMessage:
-      "That's exactly what paid ads do well — consistent, predictable leads. Google Ads especially for tradies. Our Tier 1 retainer ($700/mo) covers setup and daily management. Ad spend is separate — paid directly to Google, not us. $30/day is a solid starting point.\n\nWant to chat about what'd work for your trade? Alex does free 15-min calls — honest advice, no pitch: " + BOOKING_LINK,
+      "That's exactly what paid ads do well — consistent, predictable leads. Google Ads especially for tradies. Our Tier 1 retainer ($700/mo) covers setup and daily management. Ad spend is separate — paid directly to Google, not us. $30/day is a solid starting point.\n\n" + BOOKING_CTA,
   },
   end_scale: {
     botMessage:
-      "When you're ready to scale, you want both Google and Meta working together. Our Tier 2 Scale retainer ($1,500/mo) covers both platforms plus landing pages and reporting.\n\nWorth a quick chat to map out a plan — Alex does free 15-min calls: " + BOOKING_LINK,
+      "When you're ready to scale, you want both Google and Meta working together. Our Tier 2 Scale retainer ($1,500/mo) covers both platforms plus landing pages and reporting.\n\n" + BOOKING_CTA,
   },
   end_urgent: {
     botMessage:
-      "We can get ads live within a week. Google Ads for tradies works fast — especially for urgent services. Tier 1 retainer ($700/mo) plus ad spend (recommend $30/day). Results start compounding after 30 days but you'll see enquiries coming in sooner.\n\nLet's get you sorted — book a free 15-min call: " + BOOKING_LINK,
+      "We can get ads live within a week. Google Ads for tradies works fast — especially for urgent services. Tier 1 retainer ($700/mo) plus ad spend (recommend $30/day). Results start compounding after 30 days but you'll see enquiries coming in sooner.\n\n" + BOOKING_CTA,
   },
   end_more_leads: {
     botMessage:
-      "Good position to be in! Usually it's about optimising what's already working and adding another platform. Our Tier 2 ($1,500/mo) covers Google + Meta with proper landing pages.\n\nWant Alex to take a look at your current setup? Free 15-min call: " + BOOKING_LINK,
+      "Good position to be in! Usually it's about optimising what's already working and adding another platform. Our Tier 2 ($1,500/mo) covers Google + Meta with proper landing pages.\n\n" + BOOKING_CTA,
   },
   end_not_working: {
     botMessage:
-      "That's frustrating but fixable. Usually it's the targeting, the ad copy, or the landing page — sometimes all three. We read the numbers daily and pivot fast when something's not working.\n\nWant Alex to take a quick look at what's going on? Free 15-min call, no strings: " + BOOKING_LINK,
+      "That's frustrating but fixable. Usually it's the targeting, the ad copy, or the landing page — sometimes all three. We read the numbers daily and pivot fast when something's not working.\n\n" + BOOKING_CTA,
   },
   end_unsure: {
     botMessage:
-      "If you're not sure, they're probably not working as well as they could be. We set up proper tracking and reporting so you know exactly what's coming from where.\n\nHappy to do a free audit on a quick call with Alex: " + BOOKING_LINK,
+      "If you're not sure, they're probably not working as well as they could be. We set up proper tracking and reporting so you know exactly what's coming from where.\n\n" + BOOKING_CTA,
   },
   end_social_working: {
     botMessage:
-      "That's great! Adding Google Ads on top would give you two channels bringing in work. Our Tier 1 retainer ($700/mo) can get that running alongside your social.\n\nWant to chat about it? Free 15-min call: " + BOOKING_LINK,
+      "That's great! Adding Google Ads on top would give you two channels bringing in work. Our Tier 1 retainer ($700/mo) can get that running alongside your social.\n\n" + BOOKING_CTA,
   },
   end_social_not_working: {
     botMessage:
-      "Likes are nice but jobs pay the bills! Meta Ads (paid Facebook/Insta) are different from organic posting — they target people actually looking for your service. Our Tier 1 retainer ($700/mo) covers setup and management.\n\nWant to see what paid social could do for you? Free 15-min call: " + BOOKING_LINK,
+      "Likes are nice but jobs pay the bills! Meta Ads (paid Facebook/Insta) are different from organic posting — they target people actually looking for your service. Our Tier 1 retainer ($700/mo) covers setup and management.\n\n" + BOOKING_CTA,
   },
   end_presence: {
     botMessage:
-      "A proper website plus Google Ads is the combo that works best for tradies. We can sort both — websites from $1,999 and ad retainers from $700/mo.\n\nWant to map out a plan? Free 15-min call with Alex: " + BOOKING_LINK,
+      "A proper website plus Google Ads is the combo that works best for tradies. We can sort both — websites from $1,999 and ad retainers from $700/mo.\n\n" + BOOKING_CTA,
   },
 };
 
@@ -202,7 +202,7 @@ const INTENTS: Intent[] = [
     id: "pricing_general",
     patterns: ["price", "pricing", "cost", "how much", "budget", "rate", "quote", "all up", "total cost", "investment"],
     response:
-      "Depends on what you need! Websites start at $1,999. Ad management retainers start at $700/mo plus your ad spend on top — paid directly to Google or Meta, not us. We recommend around $30/day as a starting point but it really depends on your situation.\n\nHappy to give you a more specific number on a quick call: " + BOOKING_LINK,
+      "Depends on what you need! Websites start at $1,999. Ad management retainers start at $700/mo plus your ad spend on top — paid directly to Google or Meta, not us. We recommend around $30/day as a starting point but it really depends on your situation.\n\n" + BOOKING_CTA,
   },
   {
     id: "ads",
@@ -234,7 +234,7 @@ const INTENTS: Intent[] = [
   {
     id: "contact",
     patterns: ["contact", "email", "phone", "reach", "talk", "call", "get in touch", "speak"],
-    response: "Best way is to book a free 15-min call with Alex — no pitch, just straight advice: " + BOOKING_LINK + "\n\nOr email alex@ironvaultdigital.com.au",
+    response: "Best way is to book a free 15-min call with Alex — no pitch, just straight advice 👉 [Book a Call](/#contact)\n\nOr email alex@ironvaultdigital.com.au",
   },
   {
     id: "location",
@@ -274,7 +274,7 @@ const INTENTS: Intent[] = [
   {
     id: "booking",
     patterns: ["book", "meeting", "appointment", "schedule", "free call", "chat", "consultation"],
-    response: "Easy — Alex does free 15-min calls. No pitch, just straight advice: " + BOOKING_LINK,
+    response: "Easy — " + BOOKING_CTA,
   },
   {
     id: "how_manage_ads",
@@ -331,7 +331,7 @@ export function matchIntent(input: string): string | null {
 }
 
 export const FALLBACK_RESPONSE =
-  "I'd have to check that with Alex — easiest is a quick call. No pitch, just straight advice: " + BOOKING_LINK;
+  "I'd have to check that with Alex — " + BOOKING_CTA;
 
 export const FALLBACK_WITH_FORM =
   "I'd love to help with that! Let me grab your details so Alex can follow up personally.";

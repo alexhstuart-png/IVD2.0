@@ -221,7 +221,17 @@ const ChatbotWidget = () => {
                         : "bg-secondary text-secondary-foreground rounded-bl-md"
                     }`}
                   >
-                    {m.text}
+                     {m.text.split(/(\[.*?\]\(.*?\))/).map((part, i) => {
+                       const linkMatch = part.match(/\[(.*?)\]\((.*?)\)/);
+                       if (linkMatch) {
+                         return (
+                           <a key={i} href={linkMatch[2]} className="underline font-semibold hover:opacity-80" target={linkMatch[2].startsWith('http') ? '_blank' : undefined} rel="noopener noreferrer">
+                             {linkMatch[1]}
+                           </a>
+                         );
+                       }
+                       return <span key={i}>{part}</span>;
+                     })}
                   </div>
                 </div>
               ))}
