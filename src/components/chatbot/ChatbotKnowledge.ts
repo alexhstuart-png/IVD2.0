@@ -338,7 +338,7 @@ const INTENTS: Intent[] = [
   {
     id: "not_fit",
     patterns: ["too expensive", "can't afford", "under 500", "no budget", "tight budget"],
-    response: "Our retainers start at $700/mo — but most tradies who invest properly see a solid return in new jobs pretty quickly. Would you be open to stretching the budget if the results were there?",
+    response: "We've got different options to suit different budgets — and most tradies who invest properly see a solid return in new jobs pretty quickly. Worth having a chat about what makes sense for you.\n\n" + BOOKING_CTA,
   },
   {
     id: "guarantee",
