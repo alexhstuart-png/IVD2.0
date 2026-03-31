@@ -181,7 +181,7 @@ export const LEADS_FLOW: ConversationFlow = {
   },
   end_presence: {
     botMessage:
-      "A proper website plus Google Ads is the combo that works best for tradies. We can sort both — websites from $1,999 and ad retainers from $700/mo.\n\nWant to map out a plan? Free 15-min call with Alex: " + BOOKING_LINK,
+      "A proper website plus Google Ads is the combo that works best for tradies. We can sort both — websites from $1,999 and ad retainers from $700/mo.\n\n" + BOOKING_CTA,
   },
 };
 
