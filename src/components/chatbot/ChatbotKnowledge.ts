@@ -149,7 +149,7 @@ export const LEADS_FLOW: ConversationFlow = {
   },
   end_consistent: {
     botMessage:
-      "That's exactly what paid ads do well — consistent, predictable leads. Google Ads especially for tradies. Our Tier 1 retainer ($700/mo) covers setup and daily management. Ad spend is separate — paid directly to Google, not us. $30/day is a solid starting point.\n\nWant to chat about what'd work for your trade? Alex does free 15-min calls — honest advice, no pitch: " + BOOKING_LINK,
+      "That's exactly what paid ads do well — consistent, predictable leads. Google Ads especially for tradies. Our Tier 1 retainer ($700/mo) covers setup and daily management. Ad spend is separate — paid directly to Google, not us. $30/day is a solid starting point.\n\n" + BOOKING_CTA,
   },
   end_scale: {
     botMessage:
