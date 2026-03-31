@@ -87,7 +87,7 @@ export const WEBSITE_FLOW: ConversationFlow = {
   },
   end_conversions: {
     botMessage:
-      "That's super common — usually it's a mix of layout, messaging, and calls-to-action. We build sites specifically to convert visitors into enquiries.\n\nOur Scale package ($3,499) includes conversion-focused design plus SEO so you're getting traffic too.\n\n" + BOOKING_CTA,
+      "That's super common — usually it's a mix of layout, messaging, and calls-to-action. We build sites specifically to convert visitors into enquiries, with conversion-focused design plus SEO so you're getting traffic too.\n\n" + BOOKING_CTA,
   },
   end_seo: {
     botMessage:
