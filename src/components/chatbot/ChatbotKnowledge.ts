@@ -16,7 +16,7 @@ export const QUICK_REPLIES = [
   { label: "🕵️ I'm a competitor", intent: "competitor" },
 ] as const;
 
-const BOOKING_LINK = "https://calendar.app.google/UchY2WA1N45roorh9";
+const BOOKING_CTA = "I'd suggest booking a free 15-min call with Alex — no pitch, just honest advice 👉 [Book a Call](/#contact)";
 
 // --- Conversational flows for website & leads ---
 
