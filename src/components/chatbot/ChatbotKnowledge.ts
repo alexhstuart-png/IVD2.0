@@ -173,7 +173,7 @@ export const LEADS_FLOW: ConversationFlow = {
   },
   end_social_working: {
     botMessage:
-      "That's great! Adding Google Ads on top would give you two channels bringing in work. Our Tier 1 retainer ($700/mo) can get that running alongside your social.\n\nWant to chat about it? Free 15-min call: " + BOOKING_LINK,
+      "That's great! Adding Google Ads on top would give you two channels bringing in work. Our Tier 1 retainer ($700/mo) can get that running alongside your social.\n\n" + BOOKING_CTA,
   },
   end_social_not_working: {
     botMessage:
