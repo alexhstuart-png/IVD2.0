@@ -103,7 +103,7 @@ export const WEBSITE_FLOW: ConversationFlow = {
   },
   end_dominate: {
     botMessage:
-      "Love the ambition! Our Dominate package ($6,500+) is the full custom build — advanced SEO, integrations, the lot. 4-6 week turnaround.\n\n" + BOOKING_CTA,
+      "Love the ambition! Our top-tier package is the full custom build — advanced SEO, integrations, the lot. 4-6 week turnaround.\n\n" + BOOKING_CTA,
   },
 };
 
