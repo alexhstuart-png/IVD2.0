@@ -288,7 +288,7 @@ const INTENTS: Intent[] = [
     id: "ad_spend",
     patterns: ["ad spend", "how much to spend", "ad budget", "spend on ads", "daily budget"],
     response:
-      "Ad spend is paid directly to Google or Meta, never through us. $30/day ($900/mo) is a solid starting point — enough for the algorithm to learn and optimise. Results depend on heaps of factors though.",
+      "Ad spend is paid directly to Google or Meta, never through us. The right budget depends on your industry and goals — we can figure out what makes sense for you.\n\n" + BOOKING_CTA,
   },
   {
     id: "own_ads",
