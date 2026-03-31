@@ -9,6 +9,7 @@ import {
   FALLBACK_WITH_FORM,
   WEBSITE_FLOW,
   LEADS_FLOW,
+  COMPETITOR_FLOW,
   type ConversationFlow,
 } from "./ChatbotKnowledge";
 
