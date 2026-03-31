@@ -358,7 +358,7 @@ const INTENTS: Intent[] = [
   {
     id: "deposit",
     patterns: ["deposit", "payment", "how to pay", "payment plan", "milestone"],
-    response: "$500 deposit to start any website project, then invoiced in milestones. Retainers are monthly billing. Simple.",
+    response: "Website projects are invoiced in milestones. Retainers are monthly billing. Simple. For the full breakdown, best to have a quick chat.\n\n" + BOOKING_CTA,
   },
   {
     id: "gst",
