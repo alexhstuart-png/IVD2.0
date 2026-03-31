@@ -157,7 +157,7 @@ export const LEADS_FLOW: ConversationFlow = {
   },
   end_urgent: {
     botMessage:
-      "We can get ads live within a week. Google Ads for tradies works fast — especially for urgent services. Tier 1 retainer ($700/mo) plus ad spend (recommend $30/day). Results start compounding after 30 days but you'll see enquiries coming in sooner.\n\n" + BOOKING_CTA,
+      "We can get ads live within a week. Google Ads for tradies works fast — especially for urgent services. Results start compounding after 30 days but you'll see enquiries coming in sooner.\n\n" + BOOKING_CTA,
   },
   end_more_leads: {
     botMessage:
