@@ -169,7 +169,7 @@ export const LEADS_FLOW: ConversationFlow = {
   },
   end_unsure: {
     botMessage:
-      "If you're not sure, they're probably not working as well as they could be. We set up proper tracking and reporting so you know exactly what's coming from where.\n\nHappy to do a free audit on a quick call with Alex: " + BOOKING_LINK,
+      "If you're not sure, they're probably not working as well as they could be. We set up proper tracking and reporting so you know exactly what's coming from where.\n\n" + BOOKING_CTA,
   },
   end_social_working: {
     botMessage:
