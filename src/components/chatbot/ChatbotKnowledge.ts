@@ -254,7 +254,7 @@ const INTENTS: Intent[] = [
   {
     id: "competitor",
     patterns: ["competitor", "competition", "spy", "snooping"],
-    response: "Ha! No stress — good on ya for doing your research. We're not going anywhere. If you ever want to compare notes over a beer, you know where to find us. 🍺",
+    response: "Ha! No stress — good on ya for doing your research. How's business going on your end?",
   },
   {
     id: "pricing_general",
