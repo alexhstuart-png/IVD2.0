@@ -83,7 +83,7 @@ export const WEBSITE_FLOW: ConversationFlow = {
   },
   end_redesign: {
     botMessage:
-      "A refresh can make a huge difference. Our Launch package ($1,999) covers a full redesign — mobile optimised, fast, with proper contact forms. If you want SEO baked in too, Scale ($3,499) is the go.\n\nWant to have a quick yarn about what'd suit you best? Alex does free 15-min calls — zero pitch, just honest advice: " + BOOKING_LINK,
+      "A refresh can make a huge difference. Our Launch package ($1,999) covers a full redesign — mobile optimised, fast, with proper contact forms. If you want SEO baked in too, Scale ($3,499) is the go.\n\n" + BOOKING_CTA,
   },
   end_conversions: {
     botMessage:
