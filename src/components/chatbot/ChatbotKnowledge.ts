@@ -274,7 +274,7 @@ const INTENTS: Intent[] = [
   {
     id: "booking",
     patterns: ["book", "meeting", "appointment", "schedule", "free call", "chat", "consultation"],
-    response: "Easy — Alex does free 15-min calls. No pitch, just straight advice: " + BOOKING_LINK,
+    response: "Easy — " + BOOKING_CTA,
   },
   {
     id: "how_manage_ads",
