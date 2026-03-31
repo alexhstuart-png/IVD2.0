@@ -298,7 +298,7 @@ const INTENTS: Intent[] = [
   {
     id: "seo",
     patterns: ["seo", "search engine", "ranking", "organic", "google ranking"],
-    response: "SEO is baked into our Scale ($3,499) and Dominate ($6,500+) website packages. For ongoing SEO, it's in our Tier 3 Dominate retainer at $2,500/mo. We focus on stuff that moves the needle — technical fixes, content, and local SEO.",
+    response: "SEO is baked into a couple of our website packages, and we also offer it as an ongoing service. We focus on stuff that moves the needle — technical fixes, content, and local SEO.\n\n" + BOOKING_CTA,
   },
   {
     id: "timeline",
