@@ -177,7 +177,7 @@ export const LEADS_FLOW: ConversationFlow = {
   },
   end_social_not_working: {
     botMessage:
-      "Likes are nice but jobs pay the bills! Meta Ads (paid Facebook/Insta) are different from organic posting — they target people actually looking for your service. Our Tier 1 retainer ($700/mo) covers setup and management.\n\n" + BOOKING_CTA,
+      "Likes are nice but jobs pay the bills! Meta Ads (paid Facebook/Insta) are different from organic posting — they target people actually looking for your service. We handle the full setup and management.\n\n" + BOOKING_CTA,
   },
   end_presence: {
     botMessage:
