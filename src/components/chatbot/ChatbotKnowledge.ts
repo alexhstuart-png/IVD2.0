@@ -187,59 +187,75 @@ export const LEADS_FLOW: ConversationFlow = {
 
 export const COMPETITOR_FLOW: ConversationFlow = {
   start: {
-    botMessage: "Ha! No stress at all — good on ya for doing your homework. How's business going on your end?",
+    botMessage: "Ha! No stress at all — good on ya for doing your homework. So what's your angle in the digital space?",
     options: [
-      { label: "Going well actually", nextStep: "going_well" },
-      { label: "Bit quiet lately", nextStep: "bit_quiet" },
-      { label: "Just seeing what others are doing", nextStep: "research" },
+      { label: "Web design & dev", nextStep: "web_focus" },
+      { label: "SEO / Ads / Lead gen", nextStep: "ads_focus" },
+      { label: "Social media / Content", nextStep: "social_focus" },
+      { label: "A bit of everything", nextStep: "generalist" },
     ],
   },
-  going_well: {
-    botMessage: "Love to hear it! What's working best for you — ads, SEO, word of mouth?",
+  web_focus: {
+    botMessage: "Nice — always good to meet another builder. What kind of clients do you enjoy working with most?",
     options: [
-      { label: "Mostly word of mouth", nextStep: "end_wom" },
-      { label: "Running ads", nextStep: "end_ads" },
-      { label: "A bit of everything", nextStep: "end_mix" },
+      { label: "Tradies & local businesses", nextStep: "clients_local" },
+      { label: "E-commerce / bigger brands", nextStep: "clients_ecom" },
+      { label: "Honestly, whoever pays 😂", nextStep: "clients_anyone" },
     ],
   },
-  bit_quiet: {
-    botMessage: "Yeah it goes in waves hey. What do you reckon — is it a seasonal thing or just not getting enough enquiries?",
+  ads_focus: {
+    botMessage: "Solid — that's our bread and butter too. What platforms are you running most of your stuff on?",
     options: [
-      { label: "Seasonal", nextStep: "end_seasonal" },
-      { label: "Need more enquiries", nextStep: "end_enquiries" },
+      { label: "Google Ads mainly", nextStep: "platform_google" },
+      { label: "Meta / Social ads", nextStep: "platform_meta" },
+      { label: "Bit of both", nextStep: "platform_both" },
     ],
   },
-  research: {
-    botMessage: "Fair enough! Anything specific you're looking at — websites, ads, pricing?",
+  social_focus: {
+    botMessage: "Respect — social is a grind but when it clicks it really clicks. What kind of clients are you working with?",
     options: [
-      { label: "Websites", nextStep: "end_websites" },
-      { label: "Ads & lead gen", nextStep: "end_ads_research" },
-      { label: "Just the vibe", nextStep: "end_vibe" },
+      { label: "Small local businesses", nextStep: "clients_local" },
+      { label: "Hospitality / Lifestyle brands", nextStep: "clients_hospo" },
+      { label: "Anyone who needs it", nextStep: "clients_anyone" },
     ],
   },
-  end_wom: {
-    botMessage: "Word of mouth is gold — but it dries up sometimes hey. If you ever want a second channel bringing in work, we could probably have a decent yarn about it. No pitch, just shop talk. 🍺",
+  generalist: {
+    botMessage: "Yeah same here — wearing all the hats! What do you reckon you enjoy doing the most though?",
+    options: [
+      { label: "The creative / design side", nextStep: "enjoy_creative" },
+      { label: "The numbers / performance side", nextStep: "enjoy_performance" },
+      { label: "Just building relationships", nextStep: "enjoy_relationships" },
+    ],
   },
-  end_ads: {
-    botMessage: "Nice — always good to compare notes. If you ever want a second opinion on your campaigns, happy to have a no-strings chat. We're not going anywhere. 🍺",
+  clients_local: {
+    botMessage: "That's our world too — tradies, local services, small businesses that actually need the help. Plenty of room in the market for everyone doing it properly. Good luck with it mate, keep smashing it. 👊",
   },
-  end_mix: {
-    botMessage: "That's the way to do it — don't put all your eggs in one basket. If you ever want to swap notes over a beer, you know where to find us. 🍺",
+  clients_ecom: {
+    botMessage: "E-com is a different beast isn't it — but when you nail it the results are unreal. We tend to stick to the local/service space but always respect the e-com operators. Keep at it legend. 🍺",
   },
-  end_seasonal: {
-    botMessage: "Yeah that's the game isn't it. Some blokes use the quiet periods to get their marketing dialled in so when it picks up they're already ahead. Just a thought! Good luck with it mate. 👊",
+  clients_anyone: {
+    botMessage: "Ha — been there! That's the hustle early on isn't it. It gets better once you niche down a bit. Anyway, no hard feelings being on here — good luck with it all mate. 👊",
   },
-  end_enquiries: {
-    botMessage: "Honestly, that's what we help with day in day out. If you ever want to have a yarn about what's working for other businesses in your space — no pitch, just honest chat — the door's open. 👊",
+  clients_hospo: {
+    botMessage: "Hospo is fun — fast paced and the content opportunities are endless. We don't do much in that space so no clash there! Keep killing it. 🍺",
   },
-  end_websites: {
-    botMessage: "Nice — well have a good look around! We put a lot of thought into how we build ours. If you ever want to pick our brain, no hard feelings — we're all about raising the bar. 🍺",
+  platform_google: {
+    botMessage: "Google's where the money is for intent-based leads for sure. Always interesting seeing how other people structure their campaigns. Anyway good on ya for having a look — no secrets here! 👊",
   },
-  end_ads_research: {
-    botMessage: "Smart. Ads is where the real game is played. If you ever want to compare strategies over a coffee, we're open books. Good luck out there! 👊",
+  platform_meta: {
+    botMessage: "Meta's wild — the algorithm changes keep everyone on their toes hey. We run a lot of Meta for trades & services. Good to know there's more of us out there doing it properly. 🍺",
   },
-  end_vibe: {
-    botMessage: "Ha — respect the honesty! Well you're welcome to vibe as long as you want. If you ever feel like a collab or just a yarn, we're here. 🍺",
+  platform_both: {
+    botMessage: "Yeah both is the way to go for most clients. Google for intent, Meta for awareness — classic combo. Good luck out there, always room for people doing good work. 👊",
+  },
+  enjoy_creative: {
+    botMessage: "Nice — the creative side is what makes this job fun. We're more on the performance/results end ourselves but always appreciate good design. Keep building cool stuff mate. 🍺",
+  },
+  enjoy_performance: {
+    botMessage: "A numbers person — respect! That's where we live too. Nothing beats seeing the leads roll in when a campaign clicks. Anyway, good luck with your clients, keep smashing it. 👊",
+  },
+  enjoy_relationships: {
+    botMessage: "That's honestly what it's all about isn't it. The clients you enjoy working with make the whole thing worth it. Good on ya for being in the game. All the best mate. 🍺",
   },
 };
 
