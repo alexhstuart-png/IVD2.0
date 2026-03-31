@@ -185,6 +185,64 @@ export const LEADS_FLOW: ConversationFlow = {
   },
 };
 
+export const COMPETITOR_FLOW: ConversationFlow = {
+  start: {
+    botMessage: "Ha! No stress at all — good on ya for doing your homework. How's business going on your end?",
+    options: [
+      { label: "Going well actually", nextStep: "going_well" },
+      { label: "Bit quiet lately", nextStep: "bit_quiet" },
+      { label: "Just seeing what others are doing", nextStep: "research" },
+    ],
+  },
+  going_well: {
+    botMessage: "Love to hear it! What's working best for you — ads, SEO, word of mouth?",
+    options: [
+      { label: "Mostly word of mouth", nextStep: "end_wom" },
+      { label: "Running ads", nextStep: "end_ads" },
+      { label: "A bit of everything", nextStep: "end_mix" },
+    ],
+  },
+  bit_quiet: {
+    botMessage: "Yeah it goes in waves hey. What do you reckon — is it a seasonal thing or just not getting enough enquiries?",
+    options: [
+      { label: "Seasonal", nextStep: "end_seasonal" },
+      { label: "Need more enquiries", nextStep: "end_enquiries" },
+    ],
+  },
+  research: {
+    botMessage: "Fair enough! Anything specific you're looking at — websites, ads, pricing?",
+    options: [
+      { label: "Websites", nextStep: "end_websites" },
+      { label: "Ads & lead gen", nextStep: "end_ads_research" },
+      { label: "Just the vibe", nextStep: "end_vibe" },
+    ],
+  },
+  end_wom: {
+    botMessage: "Word of mouth is gold — but it dries up sometimes hey. If you ever want a second channel bringing in work, we could probably have a decent yarn about it. No pitch, just shop talk. 🍺",
+  },
+  end_ads: {
+    botMessage: "Nice — always good to compare notes. If you ever want a second opinion on your campaigns, happy to have a no-strings chat. We're not going anywhere. 🍺",
+  },
+  end_mix: {
+    botMessage: "That's the way to do it — don't put all your eggs in one basket. If you ever want to swap notes over a beer, you know where to find us. 🍺",
+  },
+  end_seasonal: {
+    botMessage: "Yeah that's the game isn't it. Some blokes use the quiet periods to get their marketing dialled in so when it picks up they're already ahead. Just a thought! Good luck with it mate. 👊",
+  },
+  end_enquiries: {
+    botMessage: "Honestly, that's what we help with day in day out. If you ever want to have a yarn about what's working for other businesses in your space — no pitch, just honest chat — the door's open. 👊",
+  },
+  end_websites: {
+    botMessage: "Nice — well have a good look around! We put a lot of thought into how we build ours. If you ever want to pick our brain, no hard feelings — we're all about raising the bar. 🍺",
+  },
+  end_ads_research: {
+    botMessage: "Smart. Ads is where the real game is played. If you ever want to compare strategies over a coffee, we're open books. Good luck out there! 👊",
+  },
+  end_vibe: {
+    botMessage: "Ha — respect the honesty! Well you're welcome to vibe as long as you want. If you ever feel like a collab or just a yarn, we're here. 🍺",
+  },
+};
+
 // --- Standard intents for typed questions ---
 
 const INTENTS: Intent[] = [
