@@ -331,7 +331,7 @@ export function matchIntent(input: string): string | null {
 }
 
 export const FALLBACK_RESPONSE =
-  "I'd have to check that with Alex — easiest is a quick call. No pitch, just straight advice: " + BOOKING_LINK;
+  "I'd have to check that with Alex — " + BOOKING_CTA;
 
 export const FALLBACK_WITH_FORM =
   "I'd love to help with that! Let me grab your details so Alex can follow up personally.";
