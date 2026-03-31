@@ -161,7 +161,7 @@ export const LEADS_FLOW: ConversationFlow = {
   },
   end_more_leads: {
     botMessage:
-      "Good position to be in! Usually it's about optimising what's already working and adding another platform. Our Tier 2 ($1,500/mo) covers Google + Meta with proper landing pages.\n\nWant Alex to take a look at your current setup? Free 15-min call: " + BOOKING_LINK,
+      "Good position to be in! Usually it's about optimising what's already working and adding another platform. Our Tier 2 ($1,500/mo) covers Google + Meta with proper landing pages.\n\n" + BOOKING_CTA,
   },
   end_not_working: {
     botMessage:
