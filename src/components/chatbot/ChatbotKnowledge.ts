@@ -234,7 +234,7 @@ const INTENTS: Intent[] = [
   {
     id: "contact",
     patterns: ["contact", "email", "phone", "reach", "talk", "call", "get in touch", "speak"],
-    response: "Best way is to book a free 15-min call with Alex — no pitch, just straight advice: " + BOOKING_LINK + "\n\nOr email alex@ironvaultdigital.com.au",
+    response: "Best way is to book a free 15-min call with Alex — no pitch, just straight advice 👉 [Book a Call](/#contact)\n\nOr email alex@ironvaultdigital.com.au",
   },
   {
     id: "location",
