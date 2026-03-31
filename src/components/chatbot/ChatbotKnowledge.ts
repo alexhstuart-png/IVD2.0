@@ -91,7 +91,7 @@ export const WEBSITE_FLOW: ConversationFlow = {
   },
   end_seo: {
     botMessage:
-      "SEO is a game-changer for tradies. Our Scale package ($3,499) includes proper SEO setup — technical fixes, local SEO, and content strategy.\n\n" + BOOKING_CTA,
+      "SEO is a game-changer for tradies. We do proper SEO setup — technical fixes, local SEO, and content strategy. It's included in a couple of our packages.\n\n" + BOOKING_CTA,
   },
   end_launch: {
     botMessage:
