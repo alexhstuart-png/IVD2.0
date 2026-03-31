@@ -95,7 +95,7 @@ export const WEBSITE_FLOW: ConversationFlow = {
   },
   end_launch: {
     botMessage:
-      "Our Launch package ($1,999) is perfect for that — professional site, mobile optimised, contact forms, and Google-ready. Usually done in 2-3 weeks.\n\nWant to chat about it? Alex does free 15-min calls — just straight advice: " + BOOKING_LINK,
+      "Our Launch package ($1,999) is perfect for that — professional site, mobile optimised, contact forms, and Google-ready. Usually done in 2-3 weeks.\n\n" + BOOKING_CTA,
   },
   end_scale: {
     botMessage:
