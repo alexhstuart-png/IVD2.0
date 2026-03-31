@@ -16,7 +16,7 @@ export const QUICK_REPLIES = [
   { label: "🕵️ I'm a competitor", intent: "competitor" },
 ] as const;
 
-const BOOKING_CTA = "I'd suggest booking a free 15-min call with Alex — no pitch, just honest advice 👉 [Book a Call](/#contact)";
+const BOOKING_CTA = "I'd suggest getting in touch so we can chat about what'll work best for you 👉 [Get in Touch](/#contact)";
 
 // --- Conversational flows for website & leads ---
 
@@ -83,27 +83,27 @@ export const WEBSITE_FLOW: ConversationFlow = {
   },
   end_redesign: {
     botMessage:
-      "A refresh can make a huge difference. Our Launch package ($1,999) covers a full redesign — mobile optimised, fast, with proper contact forms. If you want SEO baked in too, Scale ($3,499) is the go.\n\n" + BOOKING_CTA,
+      "A refresh can make a huge difference. We do full redesigns — mobile optimised, fast, with proper contact forms. We've got a few different packages depending on what you need.\n\n" + BOOKING_CTA,
   },
   end_conversions: {
     botMessage:
-      "That's super common — usually it's a mix of layout, messaging, and calls-to-action. We build sites specifically to convert visitors into enquiries.\n\nOur Scale package ($3,499) includes conversion-focused design plus SEO so you're getting traffic too.\n\n" + BOOKING_CTA,
+      "That's super common — usually it's a mix of layout, messaging, and calls-to-action. We build sites specifically to convert visitors into enquiries, with conversion-focused design plus SEO so you're getting traffic too.\n\n" + BOOKING_CTA,
   },
   end_seo: {
     botMessage:
-      "SEO is a game-changer for tradies. Our Scale package ($3,499) includes proper SEO setup — technical fixes, local SEO, and content strategy.\n\n" + BOOKING_CTA,
+      "SEO is a game-changer for tradies. We do proper SEO setup — technical fixes, local SEO, and content strategy. It's included in a couple of our packages.\n\n" + BOOKING_CTA,
   },
   end_launch: {
     botMessage:
-      "Our Launch package ($1,999) is perfect for that — professional site, mobile optimised, contact forms, and Google-ready. Usually done in 2-3 weeks.\n\n" + BOOKING_CTA,
+      "We've got a package perfect for that — professional site, mobile optimised, contact forms, and Google-ready. Usually done in 2-3 weeks.\n\n" + BOOKING_CTA,
   },
   end_scale: {
     botMessage:
-      "Smart move! Our Scale package ($3,499) includes the full website plus SEO setup, blog, and more pages so you start ranking on Google from day one.\n\n" + BOOKING_CTA,
+      "Smart move! We've got a package that includes the full website plus SEO setup, blog, and more pages so you start ranking on Google from day one.\n\n" + BOOKING_CTA,
   },
   end_dominate: {
     botMessage:
-      "Love the ambition! Our Dominate package ($6,500+) is the full custom build — advanced SEO, integrations, the lot. 4-6 week turnaround.\n\n" + BOOKING_CTA,
+      "Love the ambition! Our top-tier package is the full custom build — advanced SEO, integrations, the lot. 4-6 week turnaround.\n\n" + BOOKING_CTA,
   },
 };
 
@@ -149,19 +149,19 @@ export const LEADS_FLOW: ConversationFlow = {
   },
   end_consistent: {
     botMessage:
-      "That's exactly what paid ads do well — consistent, predictable leads. Google Ads especially for tradies. Our Tier 1 retainer ($700/mo) covers setup and daily management. Ad spend is separate — paid directly to Google, not us. $30/day is a solid starting point.\n\n" + BOOKING_CTA,
+      "That's exactly what paid ads do well — consistent, predictable leads. Google Ads especially for tradies. We handle setup and daily management, and ad spend goes directly to Google — not us.\n\n" + BOOKING_CTA,
   },
   end_scale: {
     botMessage:
-      "When you're ready to scale, you want both Google and Meta working together. Our Tier 2 Scale retainer ($1,500/mo) covers both platforms plus landing pages and reporting.\n\n" + BOOKING_CTA,
+      "When you're ready to scale, you want both Google and Meta working together. We've got a package that covers both platforms plus landing pages and reporting.\n\n" + BOOKING_CTA,
   },
   end_urgent: {
     botMessage:
-      "We can get ads live within a week. Google Ads for tradies works fast — especially for urgent services. Tier 1 retainer ($700/mo) plus ad spend (recommend $30/day). Results start compounding after 30 days but you'll see enquiries coming in sooner.\n\n" + BOOKING_CTA,
+      "We can get ads live within a week. Google Ads for tradies works fast — especially for urgent services. Results start compounding after 30 days but you'll see enquiries coming in sooner.\n\n" + BOOKING_CTA,
   },
   end_more_leads: {
     botMessage:
-      "Good position to be in! Usually it's about optimising what's already working and adding another platform. Our Tier 2 ($1,500/mo) covers Google + Meta with proper landing pages.\n\n" + BOOKING_CTA,
+      "Good position to be in! Usually it's about optimising what's already working and adding another platform. We can run Google + Meta together with proper landing pages.\n\n" + BOOKING_CTA,
   },
   end_not_working: {
     botMessage:
@@ -173,15 +173,15 @@ export const LEADS_FLOW: ConversationFlow = {
   },
   end_social_working: {
     botMessage:
-      "That's great! Adding Google Ads on top would give you two channels bringing in work. Our Tier 1 retainer ($700/mo) can get that running alongside your social.\n\n" + BOOKING_CTA,
+      "That's great! Adding Google Ads on top would give you two channels bringing in work. We can get that running alongside your social.\n\n" + BOOKING_CTA,
   },
   end_social_not_working: {
     botMessage:
-      "Likes are nice but jobs pay the bills! Meta Ads (paid Facebook/Insta) are different from organic posting — they target people actually looking for your service. Our Tier 1 retainer ($700/mo) covers setup and management.\n\n" + BOOKING_CTA,
+      "Likes are nice but jobs pay the bills! Meta Ads (paid Facebook/Insta) are different from organic posting — they target people actually looking for your service. We handle the full setup and management.\n\n" + BOOKING_CTA,
   },
   end_presence: {
     botMessage:
-      "A proper website plus Google Ads is the combo that works best for tradies. We can sort both — websites from $1,999 and ad retainers from $700/mo.\n\n" + BOOKING_CTA,
+      "A proper website plus Google Ads is the combo that works best for tradies. We can sort both for you.\n\n" + BOOKING_CTA,
   },
 };
 
@@ -276,19 +276,19 @@ const INTENTS: Intent[] = [
     id: "pricing_general",
     patterns: ["price", "pricing", "cost", "how much", "budget", "rate", "quote", "all up", "total cost", "investment"],
     response:
-      "Depends on what you need! Websites start at $1,999. Ad management retainers start at $700/mo plus your ad spend on top — paid directly to Google or Meta, not us. We recommend around $30/day as a starting point but it really depends on your situation.\n\n" + BOOKING_CTA,
+      "Depends on what you need! We've got a few different packages for websites and ad management. Every business is different so it's best to have a quick chat about what'll work for you.\n\n" + BOOKING_CTA,
   },
   {
     id: "ads",
     patterns: ["ads", "google ads", "meta ads", "paid ads", "ppc", "campaign", "facebook ads", "instagram ads", "advertising"],
     response:
-      "We manage Google Ads and Meta campaigns. Retainers start at $700/mo for one platform, $1,500/mo for both. Ad spend is always separate — your money goes straight to Google or Meta.\n\n$30/day is a solid starting point. Results compound after the first 30 days.",
+      "We manage Google Ads and Meta campaigns — one platform or both. Ad spend is always separate — your money goes straight to Google or Meta, not us. Results compound after the first 30 days.\n\n" + BOOKING_CTA,
   },
   {
     id: "ad_spend",
     patterns: ["ad spend", "how much to spend", "ad budget", "spend on ads", "daily budget"],
     response:
-      "Ad spend is paid directly to Google or Meta, never through us. $30/day ($900/mo) is a solid starting point — enough for the algorithm to learn and optimise. Results depend on heaps of factors though.",
+      "Ad spend is paid directly to Google or Meta, never through us. The right budget depends on your industry and goals — we can figure out what makes sense for you.\n\n" + BOOKING_CTA,
   },
   {
     id: "own_ads",
@@ -298,7 +298,7 @@ const INTENTS: Intent[] = [
   {
     id: "seo",
     patterns: ["seo", "search engine", "ranking", "organic", "google ranking"],
-    response: "SEO is baked into our Scale ($3,499) and Dominate ($6,500+) website packages. For ongoing SEO, it's in our Tier 3 Dominate retainer at $2,500/mo. We focus on stuff that moves the needle — technical fixes, content, and local SEO.",
+    response: "SEO is baked into a couple of our website packages, and we also offer it as an ongoing service. We focus on stuff that moves the needle — technical fixes, content, and local SEO.\n\n" + BOOKING_CTA,
   },
   {
     id: "timeline",
@@ -328,7 +328,7 @@ const INTENTS: Intent[] = [
   {
     id: "hosting",
     patterns: ["hosting", "maintain", "support", "ongoing", "care plan", "updates", "security"],
-    response: "Yep — we offer a $200/mo care plan that covers hosting, updates, and security. Set and forget.",
+    response: "Yep — we offer a care plan that covers hosting, updates, and security. Set and forget.\n\n" + BOOKING_CTA,
   },
   {
     id: "case_study",
@@ -338,7 +338,7 @@ const INTENTS: Intent[] = [
   {
     id: "not_fit",
     patterns: ["too expensive", "can't afford", "under 500", "no budget", "tight budget"],
-    response: "Our retainers start at $700/mo — but most tradies who invest properly see a solid return in new jobs pretty quickly. Would you be open to stretching the budget if the results were there?",
+    response: "We've got different options to suit different budgets — and most tradies who invest properly see a solid return in new jobs pretty quickly. Worth having a chat about what makes sense for you.\n\n" + BOOKING_CTA,
   },
   {
     id: "guarantee",
@@ -358,7 +358,7 @@ const INTENTS: Intent[] = [
   {
     id: "deposit",
     patterns: ["deposit", "payment", "how to pay", "payment plan", "milestone"],
-    response: "$500 deposit to start any website project, then invoiced in milestones. Retainers are monthly billing. Simple.",
+    response: "Website projects are invoiced in milestones. Retainers are monthly billing. Simple. For the full breakdown, best to have a quick chat.\n\n" + BOOKING_CTA,
   },
   {
     id: "gst",
