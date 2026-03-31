@@ -4,7 +4,7 @@ import ServicesSection from "@/components/ServicesSection";
 import WhySection from "@/components/WhySection";
 import ContactForm from "@/components/ContactForm";
 import Footer from "@/components/Footer";
-import Chatbot from "@/components/Chatbot";
+
 
 const Index = () => {
   return (
@@ -15,7 +15,7 @@ const Index = () => {
       <WhySection />
       <ContactForm />
       <Footer />
-      <Chatbot />
+      
     </div>
   );
 };
