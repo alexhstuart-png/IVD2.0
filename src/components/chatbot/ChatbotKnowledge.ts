@@ -282,7 +282,7 @@ const INTENTS: Intent[] = [
     id: "ads",
     patterns: ["ads", "google ads", "meta ads", "paid ads", "ppc", "campaign", "facebook ads", "instagram ads", "advertising"],
     response:
-      "We manage Google Ads and Meta campaigns. Retainers start at $700/mo for one platform, $1,500/mo for both. Ad spend is always separate — your money goes straight to Google or Meta.\n\n$30/day is a solid starting point. Results compound after the first 30 days.",
+      "We manage Google Ads and Meta campaigns — one platform or both. Ad spend is always separate — your money goes straight to Google or Meta, not us. Results compound after the first 30 days.\n\n" + BOOKING_CTA,
   },
   {
     id: "ad_spend",
