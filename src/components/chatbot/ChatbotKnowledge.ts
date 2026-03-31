@@ -165,7 +165,7 @@ export const LEADS_FLOW: ConversationFlow = {
   },
   end_not_working: {
     botMessage:
-      "That's frustrating but fixable. Usually it's the targeting, the ad copy, or the landing page — sometimes all three. We read the numbers daily and pivot fast when something's not working.\n\nWant Alex to take a quick look at what's going on? Free 15-min call, no strings: " + BOOKING_LINK,
+      "That's frustrating but fixable. Usually it's the targeting, the ad copy, or the landing page — sometimes all three. We read the numbers daily and pivot fast when something's not working.\n\n" + BOOKING_CTA,
   },
   end_unsure: {
     botMessage:
