@@ -15,7 +15,7 @@ const Index = () => {
       <WhySection />
       <ContactForm />
       <Footer />
-      <Chatbot />
+      
     </div>
   );
 };
