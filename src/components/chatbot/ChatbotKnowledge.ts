@@ -445,7 +445,7 @@ export function matchIntent(input: string): string | null {
 }
 
 export const FALLBACK_RESPONSE =
-  "I'd have to check that with Alex — " + BOOKING_CTA;
+  "That's a good one for Alex directly — he'll be able to give you a proper answer. Head to the enquiry form 👉 [Get in Touch](/#contact) or flick an email to alex@ironvaultdigital.com.au and he'll get back to you fast.";
 
 export const FALLBACK_WITH_FORM =
-  "I'd love to help with that! Let me grab your details so Alex can follow up personally.";
+  "That's a good one for Alex directly — he'll be able to give you a proper answer. Head to the enquiry form 👉 [Get in Touch](/#contact) or email alex@ironvaultdigital.com.au.";
