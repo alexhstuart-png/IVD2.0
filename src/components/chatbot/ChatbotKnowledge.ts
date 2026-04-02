@@ -270,25 +270,25 @@ const INTENTS: Intent[] = [
   {
     id: "competitor",
     patterns: ["competitor", "competition", "spy", "snooping"],
-    response: "Ha! No stress — good on ya for doing your research. How's business going on your end?",
+    response: "Ha! No stress — good on ya for doing your research. So what's your angle in the digital space?",
   },
   {
     id: "pricing_general",
     patterns: ["price", "pricing", "cost", "how much", "budget", "rate", "quote", "all up", "total cost", "investment"],
     response:
-      "Depends on what you need! We've got a few different packages for websites and ad management. Every business is different so it's best to have a quick chat about what'll work for you.\n\n" + BOOKING_CTA,
+      "Pricing depends on the scope of work — every business is different. Best move is to fill in the enquiry form and Alex will get back to you with something tailored.\n\n" + BOOKING_CTA,
   },
   {
     id: "ads",
     patterns: ["ads", "google ads", "meta ads", "paid ads", "ppc", "campaign", "facebook ads", "instagram ads", "advertising"],
     response:
-      "We manage Google Ads and Meta campaigns — one platform or both. Ad spend is always separate — your money goes straight to Google or Meta, not us. Results compound after the first 30 days.\n\n" + BOOKING_CTA,
+      "We run Google Ads and Meta (Facebook & Instagram) campaigns built to generate leads. Ad spend is always client-controlled and billed separately — never marked up. Results compound after the first 30 days.\n\n" + BOOKING_CTA,
   },
   {
     id: "ad_spend",
     patterns: ["ad spend", "how much to spend", "ad budget", "spend on ads", "daily budget"],
     response:
-      "Ad spend is paid directly to Google or Meta, never through us. The right budget depends on your industry and goals — we can figure out what makes sense for you.\n\n" + BOOKING_CTA,
+      "Ad spend goes directly to Google or Meta — never through us. The right budget depends on your industry and goals. Best to get in touch so we can figure out what makes sense.\n\n" + BOOKING_CTA,
   },
   {
     id: "own_ads",
@@ -297,8 +297,23 @@ const INTENTS: Intent[] = [
   },
   {
     id: "seo",
-    patterns: ["seo", "search engine", "ranking", "organic", "google ranking"],
-    response: "SEO is baked into a couple of our website packages, and we also offer it as an ongoing service. We focus on stuff that moves the needle — technical fixes, content, and local SEO.\n\n" + BOOKING_CTA,
+    patterns: ["seo", "search engine", "ranking", "organic", "google ranking", "google business"],
+    response: "We do local and national SEO — on-page optimisation, Google Business Profile, technical SEO, content, and link building. We focus on the searches that actually bring in jobs.\n\n" + BOOKING_CTA,
+  },
+  {
+    id: "social_media",
+    patterns: ["social media", "social media management", "facebook page", "instagram page", "linkedin", "posting", "content creation"],
+    response: "We handle content creation and posting across Facebook, Instagram, and LinkedIn — built around your brand, not generic filler. If you need a proper social presence, we can sort that.\n\n" + BOOKING_CTA,
+  },
+  {
+    id: "email_marketing",
+    patterns: ["email marketing", "newsletter", "email campaign", "automations", "mailchimp", "email list"],
+    response: "We do email campaigns to nurture leads and stay top of mind — automations, newsletters, and promos. Great way to keep past customers coming back.\n\n" + BOOKING_CTA,
+  },
+  {
+    id: "brand_strategy",
+    patterns: ["brand", "branding", "brand strategy", "identity", "logo", "tone of voice", "positioning", "messaging"],
+    response: "We do brand strategy — positioning, messaging, tone of voice, and visual identity guidance. Helps you stand out in a crowded market.\n\n" + BOOKING_CTA,
   },
   {
     id: "timeline",
@@ -306,39 +321,54 @@ const INTENTS: Intent[] = [
     response: "Basic website: 2-3 weeks. Full custom build: 4-6 weeks. Ads campaigns: live within 1 week of onboarding.",
   },
   {
+    id: "how_it_works",
+    patterns: ["how does it work", "your process", "what's the process", "how do you work", "next steps", "get started", "start working"],
+    response: "Simple — we have a quick chat to understand your business and goals, send through a discovery questionnaire, then put together a clear proposal with scope and timeline. You deal directly with Alex the whole way — no account managers, no middlemen.\n\n" + BOOKING_CTA,
+  },
+  {
     id: "contact",
-    patterns: ["contact", "email", "phone", "reach", "talk", "call", "get in touch", "speak"],
-    response: "Best way is to book a free 15-min call with Alex — no pitch, just straight advice 👉 [Book a Call](/#contact)\n\nOr email alex@ironvaultdigital.com.au",
+    patterns: ["contact", "email", "phone", "reach", "talk", "call", "get in touch", "speak", "enquiry", "enquire"],
+    response: "Head over to the enquiry form and fill in your details 👉 [Get in Touch](/#contact)\n\nOr email alex@ironvaultdigital.com.au and Alex will get back to you.",
+  },
+  {
+    id: "speak_to_alex",
+    patterns: ["speak to alex", "talk to alex", "alex directly", "can i call", "direct contact"],
+    response: "You're not chatting with Alex right now — I'm the IVD website assistant. But Alex is easy to reach. Fill in the enquiry form 👉 [Get in Touch](/#contact) or email alex@ironvaultdigital.com.au and he'll get back to you fast.",
   },
   {
     id: "location",
-    patterns: ["location", "where", "based", "kalgoorlie", "perth", "wa", "western australia"],
-    response: "We're based in Kalgoorlie, WA but work with clients across all of Australia. Everything's done remotely.",
+    patterns: ["location", "where", "based", "kalgoorlie", "perth", "wa", "western australia", "remote", "in person"],
+    response: "Based in Kalgoorlie, WA — but we work with clients across Australia and internationally. Fully remote, no in-person meetings required.",
+  },
+  {
+    id: "who_you_work_with",
+    patterns: ["who do you work with", "what clients", "what industries", "tradies", "trades", "small business", "mining", "industrial", "b2b", "international"],
+    response: "Tradies, small businesses, industrial & B2B companies, and international clients. Plumbers, electricians, concreters, welders, fabricators — anyone who needs more leads from the internet. We get the tradie mindset. No fluff, just results.",
   },
   {
     id: "about",
     patterns: ["who are you", "about you", "tell me about", "what do you do", "what is iron vault", "who is alex", "founder"],
-    response: "Iron Vault Digital is run by Alex Stuart, based in Kalgoorlie, WA. We specialise in websites, SEO, Google Ads, Meta Ads, and lead generation — mainly for Aussie tradies and small businesses. No fluff, just results.",
+    response: "Iron Vault Digital is a boutique digital marketing agency run by Alex Stuart, based in Kalgoorlie, WA. We build websites that generate leads, run ads that convert, and do SEO that gets businesses found on Google. We work with tradies, small businesses, and clients worldwide. No fluff, just results.",
   },
   {
     id: "services",
     patterns: ["service", "offer", "what can you", "help with", "what do you offer"],
-    response: "We do websites, SEO, Google Ads, Meta Ads, and lead generation. Basically everything a tradie or small business needs to get found online. What are you after specifically?",
+    response: "Websites, SEO, Google Ads, Meta Ads, social media management, email marketing, brand strategy, and website care plans. Everything a business needs to get found online and convert visitors into customers. What are you after specifically?",
   },
   {
     id: "hosting",
-    patterns: ["hosting", "maintain", "support", "ongoing", "care plan", "updates", "security"],
-    response: "Yep — we offer a care plan that covers hosting, updates, and security. Set and forget.\n\n" + BOOKING_CTA,
+    patterns: ["hosting", "maintain", "support", "ongoing", "care plan", "updates", "security", "backups"],
+    response: "We offer a monthly website care plan — updates, security, backups, and minor content changes. Set and forget.\n\n" + BOOKING_CTA,
   },
   {
     id: "case_study",
     patterns: ["case study", "portfolio", "examples", "work", "clients", "results", "proof", "arro"],
-    response: "Check out ARRO Weld & Rubber Lining (arroweld.com.au) — we built their full digital presence from scratch. More case studies on our work page.",
+    response: "Check out ARRO Weld & Rubber Lining (arroweld.com.au) — we built their complete digital presence from scratch: website, capability statement, Google Workspace, Google Business Profile, LinkedIn, and full DNS setup. It's our flagship case study showing what a full digital build looks like.",
   },
   {
     id: "not_fit",
     patterns: ["too expensive", "can't afford", "under 500", "no budget", "tight budget"],
-    response: "We've got different options to suit different budgets — and most tradies who invest properly see a solid return in new jobs pretty quickly. Worth having a chat about what makes sense for you.\n\n" + BOOKING_CTA,
+    response: "We've got different options to suit different scopes — and most businesses that invest properly see a solid return. Worth having a chat about what makes sense for you.\n\n" + BOOKING_CTA,
   },
   {
     id: "guarantee",
@@ -352,18 +382,28 @@ const INTENTS: Intent[] = [
   },
   {
     id: "how_manage_ads",
-    patterns: ["how do you manage", "how do you run", "ad management", "your process", "how does it work"],
-    response: "We read the numbers daily and know when an ad has run its course, when the landing page needs adjusting, or when the offer is weak. We pivot before budget gets wasted.",
+    patterns: ["how do you manage", "how do you run", "ad management"],
+    response: "We read the numbers daily and know when an ad has run its course, when the landing page needs adjusting, or when the offer is weak. We pivot before budget gets wasted. Includes search campaigns, keyword research, ad copy, landing page strategy, and ongoing optimisation.",
   },
   {
     id: "deposit",
     patterns: ["deposit", "payment", "how to pay", "payment plan", "milestone"],
-    response: "Website projects are invoiced in milestones. Retainers are monthly billing. Simple. For the full breakdown, best to have a quick chat.\n\n" + BOOKING_CTA,
+    response: "Website projects are invoiced in milestones. Retainers are monthly billing. A deposit locks in your start date. For the full breakdown, best to get in touch.\n\n" + BOOKING_CTA,
   },
   {
     id: "gst",
     patterns: ["gst", "tax", "abn"],
     response: "All prices are + GST. ABN: 17 636 500 418.",
+  },
+  {
+    id: "burned_by_agency",
+    patterns: ["burned", "ripped off", "bad experience", "previous agency", "last agency", "waste of money", "didn't work"],
+    response: "Yeah we hear that a lot. Most of our clients come to us after being burned by a big agency that overpromised and underdelivered. With us you deal directly with Alex — no account managers, no runaround. We keep it simple and we keep it honest.\n\n" + BOOKING_CTA,
+  },
+  {
+    id: "no_website",
+    patterns: ["no website", "don't have a website", "need a website", "starting from scratch", "no online presence"],
+    response: "No worries — a lot of our clients start from zero. We build custom websites that are fast, mobile-first, and built to rank on Google. No templates, no cookie-cutter layouts.\n\n" + BOOKING_CTA,
   },
   {
     id: "thanks",
