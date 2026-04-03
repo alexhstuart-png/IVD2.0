@@ -11,6 +11,7 @@ import PerthPlumberLeads from "./pages/PerthPlumberLeads.tsx";
 import PrivacyPolicy from "./pages/PrivacyPolicy.tsx";
 import RapidGrowth from "./pages/RapidGrowth.tsx";
 import RapidGrowthDetails from "./pages/RapidGrowthDetails.tsx";
+import PerthTradies from "./pages/PerthTradies.tsx";
 import Chatbot from "./components/Chatbot";
 
 const queryClient = new QueryClient();
