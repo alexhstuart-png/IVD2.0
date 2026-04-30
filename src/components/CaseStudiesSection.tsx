@@ -87,10 +87,6 @@ const CaseStudiesSection = () => {
                     </div>
                   ))}
                 </div>
-
-                <p className="mt-6 font-mono text-[10px] tracking-[0.15em] uppercase text-muted-foreground">
-                  {c.stack}
-                </p>
               </div>
             </motion.article>
           ))}
