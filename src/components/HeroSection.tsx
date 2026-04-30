@@ -1,127 +1,103 @@
 import { motion } from "framer-motion";
-import vaultGraphic from "@/assets/vault-graphic.png";
-import { trackCTA } from "@/lib/gtag";
+import { ArrowRight } from "lucide-react";
 
 const ease = [0.16, 1, 0.3, 1] as const;
 
 const stats = [
-  { value: "100%", label: "COMMITMENT" },
-  { value: "0", label: "FLUFF. EVER." },
-  { value: "∞", label: "DRIVE TO DELIVER" },
+  { value: "$80,000", label: "Cost per hour of mining downtime" },
+  { value: "AI-Powered", label: "Every platform we build" },
+  { value: "Kalgoorlie, WA", label: "Built on site knowledge" },
 ];
 
 const HeroSection = () => {
   return (
-    <section className="min-h-screen flex flex-col justify-center pt-16 bg-background relative overflow-hidden">
-      <div className="section-container relative z-10 flex flex-col lg:flex-row items-start lg:items-center gap-12">
-        <div className="flex-1">
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.6, ease }}
-            className="flex items-center gap-3 mb-8"
-          >
-            <div className="w-8 h-px bg-primary" />
-            <span className="label-uppercase">WA · Digital Marketing Agency</span>
-          </motion.div>
+    <section className="relative min-h-screen flex flex-col justify-center pt-24 bg-background grain-overlay overflow-hidden">
+      {/* Subtle radial light */}
+      <div
+        className="absolute inset-0 pointer-events-none opacity-60"
+        style={{
+          background:
+            "radial-gradient(ellipse 60% 40% at 20% 30%, hsl(var(--primary) / 0.08) 0%, transparent 60%)",
+        }}
+      />
 
-          <motion.h1
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.1, ease }}
-            className="text-6xl sm:text-7xl md:text-8xl font-bold tracking-tighter leading-[0.95] text-foreground"
-          >
-            Iron<br />
-            <span className="gold-italic font-light">Vault</span>
-          </motion.h1>
-
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.2, ease }}
-            className="mt-6 text-muted-foreground max-w-md leading-relaxed"
-          >
-            Your Brand. Secured. Amplified. Unleashed.
-          </motion.p>
-
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.25, ease }}
-            className="mt-3 text-sm text-muted-foreground max-w-md leading-relaxed"
-          >
-            We lock in results for businesses that refuse to settle. From strategy to execution — every campaign built like a vault. Impenetrable. Powerful. Yours.
-          </motion.p>
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.35, ease }}
-            className="mt-10 flex flex-col sm:flex-row gap-4"
-          >
-            <a
-              href="#contact"
-              onClick={() => trackCTA("Open The Vault")}
-              className="inline-flex items-center justify-center px-7 py-3.5 bg-primary text-primary-foreground font-semibold text-[11px] tracking-[0.12em] uppercase hover:opacity-90 transition-opacity"
-            >
-              Open the Vault
-            </a>
-            <a
-              href="#services"
-              onClick={() => trackCTA("Our Arsenal")}
-              className="inline-flex items-center justify-center px-7 py-3.5 border border-border text-foreground font-semibold text-[11px] tracking-[0.12em] uppercase hover:border-primary transition-colors"
-            >
-              Our Arsenal
-            </a>
-          </motion.div>
-        </div>
-
-        {/* Vault graphic */}
+      <div className="section-container relative z-10 flex-1 flex flex-col justify-center py-20">
         <motion.div
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 0.15, scale: 1 }}
-          transition={{ duration: 1, delay: 0.3, ease }}
-          className="hidden lg:block flex-shrink-0 w-[500px] h-[500px]"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.6, ease }}
+          className="flex items-center gap-3 mb-10"
         >
-          <img src={vaultGraphic} alt="" className="w-full h-full object-contain invert opacity-60" />
+          <div className="w-10 h-px bg-primary" />
+          <span className="label-uppercase">Iron Vault Digital · Kalgoorlie WA</span>
+        </motion.div>
+
+        <motion.h1
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.1, ease }}
+          className="font-serif text-[2.75rem] sm:text-6xl md:text-7xl lg:text-[5.5rem] leading-[1.02] tracking-tight text-foreground max-w-5xl"
+        >
+          Built for industries
+          <br />
+          <span className="italic text-foreground/95">
+            that can't afford{" "}
+            <span className="gold-underline gold-text not-italic font-serif">downtime</span>
+            <span className="not-italic">.</span>
+          </span>
+        </motion.h1>
+
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.4, ease }}
+          className="mt-8 text-base md:text-lg text-muted-foreground max-w-2xl leading-relaxed"
+        >
+          Iron Vault Digital builds AI-powered platforms and digital tools for mining,
+          industrial, and trade businesses. We don't just build websites — we build systems
+          that solve real problems.
+        </motion.p>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.55, ease }}
+          className="mt-12 flex flex-col sm:flex-row gap-4"
+        >
+          <a
+            href="#case-studies"
+            className="group inline-flex items-center justify-center gap-2 px-7 py-4 bg-primary text-primary-foreground font-mono text-[11px] tracking-[0.15em] uppercase font-semibold rounded-sm hover:opacity-90 transition-opacity"
+          >
+            See Our Work
+            <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
+          </a>
+          <a
+            href="#contact"
+            className="inline-flex items-center justify-center px-7 py-4 border border-primary text-primary font-mono text-[11px] tracking-[0.15em] uppercase font-semibold rounded-sm hover:bg-primary hover:text-primary-foreground transition-all"
+          >
+            Get in Touch
+          </a>
         </motion.div>
       </div>
 
-      {/* Stats bar */}
+      {/* Stat tiles */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, delay: 0.5, ease }}
-        className="section-container mt-auto pb-8"
+        transition={{ duration: 0.6, delay: 0.8, ease }}
+        className="relative z-10 border-t border-border"
       >
-        <div className="flex justify-end gap-12 md:gap-16">
-          {stats.map((stat) => (
-            <div key={stat.label} className="text-right">
-              <p className="text-2xl md:text-3xl font-bold gold-text">{stat.value}</p>
-              <p className="text-[9px] tracking-[0.15em] uppercase text-muted-foreground mt-1">{stat.label}</p>
+        <div className="section-container grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-border">
+          {stats.map((s) => (
+            <div key={s.label} className="py-8 md:py-10 md:px-10 first:md:pl-0 last:md:pr-0">
+              <p className="font-serif text-3xl md:text-4xl gold-text">{s.value}</p>
+              <p className="mt-2 text-xs text-muted-foreground leading-relaxed max-w-[18rem]">
+                {s.label}
+              </p>
             </div>
           ))}
         </div>
       </motion.div>
-
-      {/* Scrolling marquee */}
-      <div className="border-t border-b border-border py-4 overflow-hidden">
-        <div className="flex animate-marquee whitespace-nowrap">
-          {[...Array(2)].map((_, i) => (
-            <span key={i} className="text-xs tracking-[0.1em] text-muted-foreground mx-0">
-              SEO & Content <span className="gold-text mx-4">✦</span>
-              Paid Media <span className="gold-text mx-4">✦</span>
-              Social Media Management <span className="gold-text mx-4">✦</span>
-              Web Design & Dev <span className="gold-text mx-4">✦</span>
-              Email Marketing <span className="gold-text mx-4">✦</span>
-              Brand Strategy <span className="gold-text mx-4">✦</span>
-              Google Ads <span className="gold-text mx-4">✦</span>
-              Meta Ads <span className="gold-text mx-4">✦</span>
-              Analytics & Reporting <span className="gold-text mx-4">✦</span>
-            </span>
-          ))}
-        </div>
-      </div>
     </section>
   );
 };
