@@ -13,9 +13,8 @@ const cases = [
       { value: "2 min", label: "Average shift log time" },
       { value: "AI", label: "Real time fault diagnosis" },
       { value: "Auto", label: "Daily + weekly reports" },
-      { value: "$0", label: "Upfront cost to client" },
+      { value: "Live", label: "On site, in production" },
     ],
-    stack: "Built on: React, Supabase, Claude AI, Resend",
   },
   {
     tag: "Website + Digital Presence — Industrial",
@@ -29,7 +28,6 @@ const cases = [
       { value: "LinkedIn", label: "Company page launched" },
       { value: "Full", label: "Capability statement" },
     ],
-    stack: "Built on: React, Netlify, Cloudflare",
   },
 ];
 
@@ -89,10 +87,6 @@ const CaseStudiesSection = () => {
                     </div>
                   ))}
                 </div>
-
-                <p className="mt-6 font-mono text-[10px] tracking-[0.15em] uppercase text-muted-foreground">
-                  {c.stack}
-                </p>
               </div>
             </motion.article>
           ))}
