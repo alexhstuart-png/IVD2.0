@@ -11,7 +11,7 @@ const services = [
     title: "AI-Powered Industry Platforms",
     body:
       "Custom platforms built for mining, resources, and industrial operations. Shift intelligence systems, fault diagnosis tools, automated reporting, and operational dashboards. Built to reduce downtime, capture institutional knowledge, and give supervisors the information they need before the next shift starts.",
-    tag: "From $25,000 + monthly retainer",
+    tag: "Custom build + ongoing support",
   },
   {
     icon: LineChart,
@@ -19,7 +19,7 @@ const services = [
     title: "Digital Marketing",
     body:
       "SEO, Google Business Profile, social media, and content strategy for trade and industrial businesses. We understand your industry because we've worked in it. No fluff — just work that brings in customers.",
-    tag: "Monthly retainer from $500",
+    tag: "Ongoing monthly retainer",
   },
   {
     icon: Globe,
@@ -27,7 +27,7 @@ const services = [
     title: "Business Websites",
     body:
       "Clean, fast, professional websites for tradies and small businesses. Built to convert visitors into customers. No page builders, no templates — every site is built to suit the business.",
-    tag: "From $599",
+    tag: "Built to suit your business",
   },
 ];
 
