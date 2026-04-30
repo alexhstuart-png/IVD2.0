@@ -16,7 +16,7 @@ const Footer = () => {
           {/* Centre */}
           <div className="md:text-center">
             <div className="flex md:justify-center gap-6 mb-4 flex-wrap">
-              <a href="/work" className="text-[11px] uppercase tracking-[0.15em] font-mono text-muted-foreground hover:text-primary transition-colors">Work</a>
+              <a href="/#case-studies" className="text-[11px] uppercase tracking-[0.15em] font-mono text-muted-foreground hover:text-primary transition-colors">Work</a>
               <a href="/#services" className="text-[11px] uppercase tracking-[0.15em] font-mono text-muted-foreground hover:text-primary transition-colors">Services</a>
               <a href="/#why" className="text-[11px] uppercase tracking-[0.15em] font-mono text-muted-foreground hover:text-primary transition-colors">About</a>
               <a href="/#contact" className="text-[11px] uppercase tracking-[0.15em] font-mono text-muted-foreground hover:text-primary transition-colors">Contact</a>

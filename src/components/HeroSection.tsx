@@ -65,7 +65,7 @@ const HeroSection = () => {
           className="mt-12 flex flex-col sm:flex-row gap-4"
         >
           <a
-            href="/work"
+            href="#case-studies"
             className="group inline-flex items-center justify-center gap-2 px-7 py-4 bg-primary text-primary-foreground font-mono text-[11px] tracking-[0.15em] uppercase font-semibold rounded-sm hover:opacity-90 transition-opacity"
           >
             See Our Work
