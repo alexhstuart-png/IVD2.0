@@ -65,14 +65,14 @@ const HeroSection = () => {
           className="mt-12 flex flex-col sm:flex-row gap-4"
         >
           <a
-            href="#case-studies"
+            href="/work"
             className="group inline-flex items-center justify-center gap-2 px-7 py-4 bg-primary text-primary-foreground font-mono text-[11px] tracking-[0.15em] uppercase font-semibold rounded-sm hover:opacity-90 transition-opacity"
           >
             See Our Work
             <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
           </a>
           <a
-            href="#contact"
+            href="/contact"
             className="inline-flex items-center justify-center px-7 py-4 border border-primary text-primary font-mono text-[11px] tracking-[0.15em] uppercase font-semibold rounded-sm hover:bg-primary hover:text-primary-foreground transition-all"
           >
             Get in Touch

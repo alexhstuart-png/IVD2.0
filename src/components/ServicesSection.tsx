@@ -90,7 +90,7 @@ const ServicesSection = () => {
                     {s.tag}
                   </p>
                   <a
-                    href="#contact"
+                    href="/contact"
                     className="inline-flex items-center gap-2 text-[11px] tracking-[0.15em] font-mono uppercase font-semibold text-foreground group-hover:gold-text transition-colors"
                   >
                     Learn More

@@ -1,22 +1,22 @@
 import { useEffect } from "react";
 import Navbar from "@/components/Navbar";
-import HeroSection from "@/components/HeroSection";
 import Footer from "@/components/Footer";
+import ServicesSection from "@/components/ServicesSection";
 
-const Index = () => {
+const Services = () => {
   useEffect(() => {
-    document.title = "Iron Vault Digital — Built for industries that can't afford downtime";
+    document.title = "Services — Iron Vault Digital";
   }, []);
 
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
-      <main>
-        <HeroSection />
+      <main className="pt-20">
+        <ServicesSection />
       </main>
       <Footer />
     </div>
   );
 };
 
-export default Index;
+export default Services;

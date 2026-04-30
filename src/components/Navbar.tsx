@@ -2,10 +2,10 @@ import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
 
 const navLinks = [
-  { label: "Work", href: "/#case-studies" },
-  { label: "Services", href: "/#services" },
-  { label: "About", href: "/#why" },
-  { label: "Contact", href: "/#contact" },
+  { label: "Work", href: "/work" },
+  { label: "Services", href: "/services" },
+  { label: "About", href: "/about" },
+  { label: "Contact", href: "/contact" },
 ];
 
 const Navbar = () => {
@@ -44,7 +44,7 @@ const Navbar = () => {
             </a>
           ))}
           <a
-            href="/#contact"
+            href="/contact"
             className="px-5 py-2.5 bg-primary text-primary-foreground text-[11px] tracking-[0.15em] font-semibold uppercase rounded-sm hover:opacity-90 transition-opacity font-mono"
           >
             Get in Touch
@@ -76,7 +76,7 @@ const Navbar = () => {
               </a>
             ))}
             <a
-              href="/#contact"
+              href="/contact"
               onClick={() => setIsOpen(false)}
               className="mt-6 px-6 py-4 bg-primary text-primary-foreground text-[12px] tracking-[0.15em] font-semibold uppercase text-center rounded-sm font-mono"
             >
